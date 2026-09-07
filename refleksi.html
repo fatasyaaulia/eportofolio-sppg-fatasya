@@ -1,489 +1,1828 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Refleksi Akhir - Fatasya Aulia Suyono</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ["Poppins", "sans-serif"], mono: ["Fira Code", "monospace"] },
-          colors: { cyber: { blue: "#5B45F3", cyan: "#32ADE6", purple: "#AF52DE", indigo: "#5856D6", pink: "#F381BD", orange: "#FF9500", green: "#34C759", red: "#FF3B30" } },
-          animation: { "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards" },
-          keyframes: { fadeInUp: { "0%": { opacity: "0", transform: "translateY(40px)" }, "100%": { opacity: "1", transform: "translateY(0)" } } },
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Refleksi Akhir - Fatasya Aulia Suyono | E-Portofolio PPG</title>
+
+    <!-- Google Fonts: Fraunces (Editorial) & Plus Jakarta Sans (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Fraunces", "serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              mono: ["Courier New", "monospace"],
+            },
+            colors: {
+              pastel: {
+                pink: "#FFE5EC",
+                blush: "#FFB5C6",
+                lavender: "#E2D9F3",
+                peach: "#FFE4D6",
+                cream: "#FFFDF9",
+                blue: "#E0F2FE",
+                mint: "#D1FAE5",
+              },
+              text: {
+                main: "#4A3B32",
+                muted: "#7A6B62",
+                heading: "#2D2745",
+              },
+            },
+            boxShadow: {
+              soft: "0 20px 40px -15px rgba(255, 181, 198, 0.2)",
+              float: "0 30px 50px -20px rgba(226, 217, 243, 0.5)",
+              sticker: "0 4px 15px rgba(0,0,0,0.05)",
+            },
+          },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <style>
-    body {
-      background-color: #F8F7FF;
-      background-image: radial-gradient(at 0% 0%, rgba(91, 69, 243, 0.08) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(175, 82, 222, 0.08) 0px, transparent 50%);
-      background-attachment: fixed; color: #1d1d1f; overflow-x: hidden; scroll-behavior: smooth;
-    }
-    .tech-grid-bg { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(91, 69, 243, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(91, 69, 243, 0.03) 1px, transparent 1px); }
-    
-    .bento-card {
-      background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(24px) saturate(150%); border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 10px 30px -10px rgba(91, 69, 243, 0.08); border-radius: 2.5rem; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .bento-card:hover { box-shadow: 0 20px 40px -15px rgba(91, 69, 243, 0.15); border-color: rgba(91, 69, 243, 0.2); background: rgba(255, 255, 255, 0.8); }
-    
-    .nav-link { font-weight: 500; color: #64748B; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: 9999px; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; }
-    .nav-link:hover { color: #5B45F3; background-color: #EBE7FE; }
-    .nav-link.active { color: #5B45F3; font-weight: 600; background-color: white; box-shadow: 0 2px 10px rgba(91, 69, 243, 0.05); }
-    
-    .btn-gradient { background: linear-gradient(135deg, #7158E2 0%, #5B45F3 100%); color: white; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(91, 69, 243, 0.25); }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(91, 69, 243, 0.35); }
-
-    .iframe-wrapper { position: relative; width: 100%; padding-bottom: 75%; border-radius: 1.5rem; overflow: hidden; background: #FFFFFF; border: 4px solid white; box-shadow: 0 10px 20px rgba(91, 69, 243, 0.1); }
-    .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-    
-    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-  </style>
-</head>
-<body class="antialiased relative min-h-screen flex flex-col">
-  
-  <div class="fixed inset-0 tech-grid-bg pointer-events-none z-0"></div>
-
-  <!-- ================= NAVIGASI KONSISTEN ================= -->
-  <nav class="fixed w-full z-50 mt-4 px-4 md:px-6 transition-all duration-300">
-    <div class="max-w-[1300px] mx-auto bg-white/70 backdrop-blur-2xl border border-white/90 shadow-[0_8px_30px_rgba(91,69,243,0.05)] rounded-full px-4 md:px-6 py-3 flex justify-between items-center">
-      <div class="flex items-center gap-3 group cursor-pointer relative shrink-0">
-        <div class="w-10 h-10 bg-gradient-to-br from-cyber-blue to-cyber-purple text-white rounded-xl flex items-center justify-center font-mono font-bold text-lg shadow-lg group-hover:scale-105 transition-transform"><i class="fas fa-code"></i></div>
-        <div class="hidden sm:block">
-          <h1 class="font-bold text-[#2D2B52] text-sm leading-none tracking-tight">Fatasya<span class="text-cyber-pink">.</span></h1>
-          <p class="text-[9px] text-gray-500 font-bold uppercase tracking-widest mt-0.5">E-Portofolio</p>
-        </div>
-      </div>
-      <div class="hidden lg:flex items-center gap-1 bg-slate-50/50 p-1 rounded-full border border-slate-100">
-        <a href="index.html" class="nav-link"><i class="fas fa-home opacity-70"></i> Beranda</a>
-        <a href="profil.html" class="nav-link"><i class="far fa-user opacity-70"></i> Profil</a>
-        <a href="refleksi.html" class="nav-link active"><i class="far fa-file-alt opacity-70"></i> Refleksi</a>
-        <a href="model.html" class="nav-link"><i class="fas fa-chalkboard-teacher opacity-70"></i> Model Guru</a>
-      </div>
-      <div class="flex items-center gap-3 shrink-0">
-        <a href="https://wa.me/6285732003774" target="_blank" class="hidden md:flex btn-gradient px-6 py-2.5 rounded-full text-sm font-bold items-center gap-2">Hubungi Saya <i class="fab fa-whatsapp text-lg"></i></a>
-        <button id="mobile-menu-button" class="lg:hidden text-cyber-blue text-2xl focus:outline-none bg-white p-2 rounded-full shadow-sm"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-4 right-4 bg-white/95 backdrop-blur-2xl border border-white shadow-2xl rounded-3xl flex flex-col p-4 space-y-2 font-medium z-40 text-sm">
-      <a href="index.html" class="block w-full text-gray-600 hover:bg-blue-50 p-3 rounded-2xl">Beranda</a>
-      <a href="profil.html" class="block w-full text-gray-600 hover:bg-blue-50 p-3 rounded-2xl">Profil</a>
-      <a href="refleksi.html" class="block w-full text-cyber-blue bg-blue-50 p-3 rounded-2xl font-bold">Refleksi</a>
-      <a href="model.html" class="block w-full text-gray-600 hover:bg-blue-50 p-3 rounded-2xl">Model Guru</a>
-    </div>
-  </nav>
-  <!-- ======================================================= -->
-
-  <main class="flex-1 max-w-[1300px] mx-auto w-full pt-32 pb-20 px-4 md:px-8 relative z-10 space-y-10">
-    
-    <div class="text-center opacity-0 animate-fade-in-up mb-12">
-      <div class="inline-flex items-center gap-2 mb-4 bg-white/80 px-4 py-2 rounded-full border border-slate-100 shadow-sm">
-        <i class="fas fa-book-open text-cyber-blue"></i>
-        <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">Refleksi SPPG</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-[#2D2B52] tracking-tight">Refleksi Pembelajaran</h1>
-      <p class="text-slate-500 font-medium mt-4 max-w-2xl mx-auto">Evaluasi komprehensif atas 7 mata kuliah inti dan penerapannya dalam Praktik Pengalaman Lapangan (PPL) secara nyata.</p>
-    </div>
-
-    <!-- MATKUL 1 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-blue-100 text-cyber-blue rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0">01</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Pemahaman tentang Peserta Didik dan Pembelajarannya (PPP)</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali peserta PPG untuk memahami karakteristik, kebutuhan, dan potensi peserta didik sebagai dasar merancang, melaksanakan, dan mengevaluasi pembelajaran yang efektif, adaptif, inklusif, dan berpusat pada peserta didik melalui pendekatan Pembelajaran Mendalam. Peserta mempelajari perkembangan dan perbedaan individu, melakukan identifikasi kebutuhan belajar, serta menerapkannya dalam perencanaan dan praktik pembelajaran mikro yang terintegrasi dengan PPL.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong class="text-cyber-blue">Connection (Koneksi):</strong> Materi ini terhubung langsung dengan peran saya sebagai calon guru dalam memahami karakteristik, kebutuhan, dan potensi peserta didik secara holistik sebelum merancang pembelajaran. Selama ini, saya terbiasa menggunakan satu metode pengajaran yang sama untuk semua anak di kelas. Mata kuliah ini memberikan pemahaman baru bahwa setiap murid memiliki tingkat kecerdasan dan kesiapan emosional yang beragam, sehingga metode mengajar harus selalu disesuaikan dengan kondisi mereka masing-masing agar materi dapat dipahami secara maksimal.</p>
-                <p><strong class="text-cyber-blue">Challenge (Tantangan):</strong> Tantangan terbesar adalah menggali kebutuhan belajar peserta didik secara mendalam melalui observasi dan asesmen, karena keberagaman gaya belajar, kondisi sosial-emosional, dan latar belakang budaya siswa yang berbeda-beda. Tantangan ini sangat saya rasakan saat harus merancang strategi pengajaran untuk kelas yang heterogen, seperti kelas yang berisi murid dengan tingkat pemahaman yang sangat cepat, murid yang hiperaktif, serta murid yang mudah kehilangan fokus. Memfasilitasi seluruh perbedaan tersebut secara adil menuntut persiapan mengajar yang jauh lebih matang.</p>
-                <p><strong class="text-cyber-blue">Concept (Konsep):</strong> Konsep utama yang dipelajari adalah profiling peserta didik, prinsip pembelajaran konstruktif, humanistik, dan berdiferensiasi, serta perancangan pengalaman belajar yang adaptif dan inklusif. Melalui pengenalan profil murid, guru dapat memetakan minat dan kesulitan belajar sejak awal. Penerapan konsep-konsep tersebut pada akhirnya bermuara pada pelaksanaan pembelajaran berdiferensiasi, di mana saya harus mampu menyesuaikan tingkat kesulitan materi maupun proses kegiatan kelas dengan kemampuan setiap murid.</p>
-                <p><strong class="text-cyber-blue">Change (Perubahan):</strong> Saya lebih konsisten melakukan observasi dan refleksi terhadap kebutuhan belajar siswa sebelum merancang pembelajaran, serta menerapkan strategi diferensiasi secara nyata di kelas. Saya berkomitmen untuk rutin memberikan tes diagnostik awal di setiap pergantian materi pembelajaran. Data dari tes tersebut akan saya gunakan untuk menyusun aktivitas kelas yang lebih beragam, seperti memberikan tugas pemecahan masalah bagi murid yang cepat paham dan tugas berbasis praktik bagi murid yang aktif bergerak.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-purple mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Hasil studi kasus atau refleksi mengenai karakteristik dan kebutuhan belajar peserta didik. Secara spesifik, saya menggunakan analisis Diagram Tulang Ikan (Fishbone Diagram) dan Laporan Ujian Akhir Semester.</p>
-                <p><strong>Alasan:</strong> Artefak ini menunjukkan pemahaman saya dalam mengidentifikasi karakteristik, kebutuhan, serta perbedaan individu peserta didik sebagai dasar dalam menentukan strategi pembelajaran. Kedua artefak tersebut membuktikan kemampuan saya secara nyata dalam memetakan akar masalah siswa di kelas dan merancang penyesuaian instruksi yang tepat sasaran, baik untuk murid yang sangat aktif maupun murid yang memiliki kecerdasan di atas rata-rata.</p>
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Setiap peserta didik memiliki karakteristik, potensi, dan kebutuhan belajar yang berbeda sehingga pembelajaran perlu dirancang secara adaptif, inklusif, dan berpusat pada peserta didik.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih memperhatikan kebutuhan dan karakteristik peserta didik melalui observasi dan asesmen sebelum menentukan strategi dan kegiatan pembelajaran.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1CymDBgh097VQ-qtZXFkTVk8tnkgfDrV0/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MATKUL 2 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up" style="animation-delay: 100ms;">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-pink-100 text-cyber-pink rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0">02</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Filosofi Pendidikan dan Pendidikan Nilai</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali peserta PPG dengan pemahaman mendalam mengenai landasan pendidikan di Indonesia yang berakar pada pemikiran Ki Hadjar Dewantara dan nilai-nilai Pancasila. Peserta mempelajari bagaimana merancang pendidikan yang berpusat pada peserta didik, mengintegrasikan nilai-nilai karakter bangsa, serta memahami pentingnya kode etik profesi guru dalam menciptakan lingkungan belajar yang aman, inklusif, dan bebas dari kekerasan.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong class="text-cyber-pink">Connection (Koneksi):</strong> Materi ini terhubung langsung dengan peran saya sebagai calon guru dalam memahami dasar dan tujuan pendidikan yang sebenarnya. Sebelumnya, saya beranggapan bahwa pendidikan yang ideal adalah penerapan aturan dan kurikulum yang seragam untuk semua murid di dalam kelas formal. Namun, setelah mempelajari pemikiran Ki Hadjar Dewantara, saya menyadari bahwa pendidikan harus disesuaikan dengan lingkungan asal dan perkembangan zaman murid. Proses mengajar tidak bisa dilepaskan dari penanaman nilai karakter dan keharusan guru untuk memposisikan diri sebagai teladan yang baik.</p>
-                <p><strong class="text-cyber-pink">Challenge (Tantangan):</strong> Tantangan terbesar adalah mengubah pola pikir kaku saya mengenai cara pendisiplinan siswa di sekolah. Tantangan ini sangat terasa ketika saya harus menganalisis kasus nyata tentang seorang guru yang memotong paksa rambut siswanya demi menegakkan aturan sekolah. Mengubah pandangan lama bahwa ketegasan harus selalu ditunjukkan melalui hukuman fisik menjadi pendekatan yang lebih mengutamakan komunikasi merupakan proses yang menuntut kedewasaan emosi dan kesabaran ekstra dari saya.</p>
-                <p><strong class="text-cyber-pink">Concept (Konsep):</strong> Konsep utama yang dipelajari adalah pendidikan kontekstual, nilai-nilai Pancasila, dan penerapan kode etik profesi guru. Pendidikan kontekstual mengajarkan saya untuk selalu menyesuaikan penyampaian materi dengan budaya dan lingkungan nyata murid, seperti yang dicontohkan dalam analisis sekolah di pedalaman. Sementara itu, pemahaman tentang kode etik profesi menyadarkan saya bahwa aturan tersebut bukan sekadar dokumen tertulis, melainkan pedoman moral nyata yang menjaga martabat guru dan melindungi hak siswa dari berbagai tindakan kekerasan.</p>
-                <p><strong class="text-cyber-pink">Change (Perubahan):</strong> Saya akan mengubah pendekatan saya dalam mendisiplinkan dan berinteraksi dengan siswa di kelas. Ke depannya, saya berkomitmen untuk menghentikan segala bentuk hukuman yang bersifat mempermalukan fisik maupun mental saat murid melakukan kesalahan. Saya akan menggantinya dengan pendekatan dialog untuk mencari tahu alasan di balik perilaku mereka. Saya juga akan selalu meluangkan waktu untuk mengamati kebiasaan murid agar penyampaian materi saya lebih relevan dengan kehidupan nyata mereka.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-purple mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Hasil analisis kasus pendidikan kontekstual dan lembar refleksi mengenai etika profesi guru. Secara spesifik, saya menggunakan dokumen Tugas Analisis Kasus Sokola Rimba dan Lembar Refleksi Kasus Pelanggaran Kode Etik Guru.</p>
-                <p><strong>Alasan:</strong> Artefak ini menunjukkan pemahaman saya dalam mengidentifikasi pentingnya pendidikan yang menyesuaikan dengan latar belakang budaya murid serta pentingnya batasan moral seorang guru. Kedua artefak tersebut membuktikan bahwa saya mampu menganalisis kesalahan pada pendekatan hukuman fisik di sekolah dan merumuskan pendekatan baru yang lebih memanusiakan murid dalam proses pembelajaran.</p>
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Pendidikan adalah proses menuntun murid sesuai dengan lingkungan asal dan zamannya, didukung oleh kepatuhan guru terhadap kode etik untuk menciptakan lingkungan belajar yang aman.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih mengutamakan pendekatan komunikasi saat mendisiplinkan siswa dan selalu menyesuaikan metode mengajar dengan latar belakang lingkungan peserta didik.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1C23eQm8KSvtTJZQWtabdhXGFq0bwnom0/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MATKUL 3 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-purple-100 text-cyber-purple rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0">03</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Pembelajaran Mendalam dan Asesmen Dasar</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali peserta PPG dengan kemampuan merancang, melaksanakan, dan mengevaluasi pembelajaran yang berpusat pada peserta didik untuk mencapai pemahaman yang bermakna. Peserta belajar menyusun tujuan pembelajaran, merancang asesmen atau alat penilaian yang tepat, dan menggunakan berbagai strategi pengajaran untuk memastikan siswa tidak sekadar sibuk beraktivitas, melainkan mampu memahami makna pelajaran dan menerapkannya dalam kehidupan nyata.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong class="text-cyber-purple">Connection (Koneksi):</strong> Materi ini terhubung langsung dengan peran saya sebagai calon guru dalam menyusun rencana pembelajaran dan alat penilaian yang bermakna. Sebelumnya, saya beranggapan bahwa proses belajar yang aktif cukup dilakukan dengan memberi tugas atau proyek kepada murid untuk dikerjakan. Namun, mata kuliah ini menyadarkan saya bahwa guru harus menentukan tujuan akhir dan cara penilaiannya terlebih dahulu sebelum merancang kegiatan sehari-hari di kelas. Saya juga belajar bahwa memberikan tugas proyek pembuatan aplikasi kepada murid tanpa panduan langkah demi langkah sejak awal justru akan membuat mereka kebingungan, stres, dan gagal mencapai pemahaman yang sebenarnya.</p>
-                <p><strong class="text-cyber-purple">Challenge (Tantangan):</strong> Tantangan terbesar yang saya hadapi adalah mengubah pola pikir dari mengajar yang berpusat pada materi atau aktivitas menjadi mengajar yang berpusat pada tujuan dan penilaian akhir. Bagi saya, menyusun instrumen penilaian dan kriteria (rubrik) yang rinci sebelum menyusun urutan kegiatan belajar di kelas adalah hal yang sangat menantang dan membutuhkan waktu berpikir yang lebih lama. Selain itu, tantangan lainnya adalah merumuskan bentuk bantuan bertahap atau panduan pengerjaan yang pas agar murid tidak merasa dilepas begitu saja saat mereka mengerjakan tugas proyek berbasis aplikasi komputer.</p>
-                <p><strong class="text-cyber-purple">Concept (Konsep):</strong> Konsep utama yang sangat penting bagi saya adalah pola perancangan mundur, pemberian bantuan bertahap, dan penilaian proses pembelajaran. Perancangan mundur mengajarkan saya untuk selalu memulai persiapan mengajar dengan menentukan apa yang harus dipahami murid, lalu menyusun alat penilaiannya, dan terakhir baru merancang aktivitas belajarnya. Konsep bantuan bertahap menyadarkan saya bahwa murid harus didampingi perlahan dengan instruksi yang jelas hingga mereka siap bekerja mandiri. Sementara itu, penilaian proses mengingatkan saya untuk terus memantau pemahaman murid di tengah pelajaran berjalan agar saya bisa segera memperbaiki cara mengajar jika ada murid yang tertinggal.</p>
-                <p><strong class="text-cyber-purple">Change (Perubahan):</strong> Perubahan nyata dalam diri saya adalah saya tidak akan lagi merancang aktivitas kelas hanya karena kegiatan tersebut terlihat seru atau membuat murid sibuk. Ke depannya, saya berkomitmen untuk selalu menerapkan pola perancangan mundur saat membuat Rencana Pelaksanaan Pembelajaran. Sebelum memikirkan aktivitas di kelas, saya akan memastikan kriteria penilaian dan rubrik tugas proyek sudah tersusun dengan sangat jelas. Selain itu, saya tidak akan lagi memberikan tugas proyek besar tanpa memberikan panduan langkah demi langkah yang memadai sejak awal pembelajaran.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-blue mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-blue border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Modul Ajar pembuatan aplikasi komputer yang disusun dengan pendekatan perancangan mundur beserta kelengkapan rubrik penilaian proyek siswa.</p>
-                <p><strong>Alasan:</strong> Artefak ini menunjukkan pemahaman saya secara nyata dalam merancang urutan pembelajaran yang berfokus pada penilaian yang bermakna. Dokumen modul ajar tersebut membuktikan bahwa saya mampu menyusun instrumen dan kriteria penilaian sebelum kegiatan belajar dirancang. Selain itu, di dalam modul tersebut juga terdapat panduan penugasan yang jelas bagi siswa, yang menjadi bukti bahwa saya menerapkan konsep pemberian bantuan bertahap agar siswa tidak kebingungan saat menyelesaikan proyeknya.</p>
-                <h4 class="font-bold text-cyber-blue border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Pembelajaran yang bermakna harus dirancang dengan menentukan tujuan dan alat penilaian terlebih dahulu, serta selalu membutuhkan panduan bertahap dari guru saat siswa mengerjakan tugas proyek.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya berkomitmen untuk merancang kriteria dan alat penilaian terlebih dahulu sebelum menyusun aktivitas belajar di kelas, serta memastikan setiap tugas proyek selalu dilengkapi dengan panduan bertahap bagi siswa.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1WYS-a5-sirikJrgwx9mOJ9uU14Xvn36C/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MATKUL 4 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up" style="animation-delay: 300ms;">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-cyan-100 text-cyber-cyan rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0">04</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Pola Pikir Bertumbuh (Growth Mindset)</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali peserta PPG dengan pemahaman tentang cara kerja otak manusia yang dapat terus berkembang. Peserta mempelajari pentingnya menumbuhkan keyakinan bahwa kemampuan dapat ditingkatkan melalui usaha, serta bagaimana merancang lingkungan belajar yang mengapresiasi proses dan merayakan kesalahan sebagai bagian dari pembelajaran.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong class="text-cyber-cyan">Connection (Koneksi):</strong> Materi ini terhubung langsung dengan peran saya dalam membentuk mental pantang menyerah pada murid. Sebelumnya, saya terbiasa memuji murid dari hasil akhir atau kepintarannya saja. Namun, mata kuliah ini menyadarkan saya bahwa pujian seperti itu justru membuat anak takut mencoba tantangan baru karena khawatir dianggap tidak pintar jika gagal. Saya belajar bahwa guru harus lebih menghargai proses belajarnya.</p>
-                <p><strong class="text-cyber-cyan">Challenge (Tantangan):</strong> Tantangan terbesar adalah mengubah respons saya ketika melihat murid melakukan kesalahan, terutama saat praktik membuat aplikasi komputer. Saat aplikasi buatan murid mengalami kegagalan sistem (error), mereka sering langsung merasa frustrasi. Menahan diri agar tidak langsung mengambil alih komputer mereka untuk memberikan jawaban instan, dan sebaliknya membimbing mereka mencari letak kesalahan sendiri, membutuhkan kesabaran ekstra.</p>
-                <p><strong class="text-cyber-cyan">Concept (Konsep):</strong> Konsep utama yang paling penting adalah apresiasi terhadap proses dan perayaan kesalahan. Saya belajar bahwa kecerdasan tidak kaku, melainkan bisa dilatih saat otak menghadapi kesulitan. Oleh karena itu, lingkungan kelas harus berfokus pada penghargaan terhadap kegigihan murid. Kesalahan saat mengerjakan tugas tidak boleh dipandang sebagai kelemahan, melainkan sebagai petunjuk penting untuk menemukan solusi yang tepat.</p>
-                <p><strong class="text-cyber-cyan">Change (Perubahan):</strong> Perubahan nyata yang akan saya lakukan adalah mengganti cara saya memberikan pujian di kelas. Saya tidak akan lagi memuji kecerdasan murid, melainkan secara spesifik memuji kegigihan dan usaha mereka. Saya juga akan membiasakan murid untuk tidak panik atau malu saat kode aplikasinya mengalami kegagalan, melainkan menuntun mereka menggunakan pertanyaan pancingan agar mau menelusuri masalah tersebut secara mandiri.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-purple mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Lembar Kerja Refleksi Penerapan Pujian dan Dokumen Skenario Pembelajaran Merayakan Kesalahan.</p>
-                <p><strong>Alasan:</strong> Artefak ini membuktikan pemahaman saya dalam merancang strategi untuk mengubah pola pikir murid secara nyata. Skenario pembelajaran tersebut menunjukkan bahwa saya mampu menyusun kegiatan praktik yang memberikan ruang aman bagi murid untuk mengalami dan memperbaiki kesalahan secara mandiri, tanpa merasa dihakimi.</p>
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Kecerdasan manusia dapat terus berkembang melalui usaha, dan kesalahan adalah tahapan wajar yang sangat dibutuhkan untuk mencapai pemahaman yang mendalam.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya berkomitmen untuk memuji usaha murid daripada kepintarannya, serta melatih kemandirian mereka agar pantang menyerah saat menghadapi kendala tugas praktik.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1yEg3rdr34p7cORwKRUbI9Ul8J1F-46Cv/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MATKUL 5 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up" style="animation-delay: 100ms;">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-orange-100 text-cyber-orange rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0" style="color: #FF9500;">05</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Pengembangan Kebugaran Jasmani</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali peserta PPG dengan pemahaman mengenai pentingnya menjaga kebugaran fisik dan kesehatan tubuh bagi seorang pendidik. Peserta mempelajari cara mengukur daya tahan fisik, merancang program latihan jasmani mandiri, serta menyadari bahwa ketahanan fisik dan kebugaran tubuh merupakan fondasi utama agar guru dapat mengajar secara optimal, berenergi, dan sabar dalam menghadapi peserta didik.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong style="color: #FF9500;">Connection (Koneksi):</strong> Materi ini terhubung langsung dengan kesadaran saya mengenai pentingnya kondisi fisik bagi seorang guru. Sebelumnya, saya beranggapan bahwa persiapan menjadi guru cukup berfokus pada penguasaan materi pelajaran dan pembuatan perangkat mengajar saja, sementara urusan kesehatan fisik sering saya abaikan. Namun, mata kuliah ini menyadarkan saya bahwa berdiri lama di depan kelas dan duduk berjam-jam menyusun tugas membutuhkan daya tahan fisik yang prima agar tubuh tidak mudah lelah atau mengalami nyeri otot.</p>
-                <p><strong style="color: #FF9500;">Challenge (Tantangan):</strong> Tantangan terbesar yang saya hadapi adalah mengubah kebiasaan lama yang sering mengabaikan kesehatan fisik demi mengejar target tugas akademik. Saat pertama kali diuji, saya menyadari bahwa daya tahan jantung dan paru-paru saya berada di tingkat yang masih perlu ditingkatkan, serta tubuh mudah terasa pegal. Memaksa diri untuk konsisten meluangkan waktu berolahraga di tengah padatnya jadwal kuliah dan tugas PPL adalah sebuah tantangan besar yang menuntut komitmen tinggi dan manajemen waktu yang baik dari saya.</p>
-                <p><strong style="color: #FF9500;">Concept (Konsep):</strong> Konsep utama yang dipelajari adalah kebugaran holistik dan manajemen energi fisik. Saya menyadari bahwa kesehatan fisik guru berhubungan erat dengan kestabilan emosi dan kesabaran di dalam kelas. Jika raga seorang guru kelelahan, maka fokus dan energi dalam menghadapi dinamika murid juga akan ikut menurun. Oleh karena itu, perawatan fisik melalui latihan ringan secara rutin bukanlah sekadar pilihan tambahan, melainkan sebuah kebutuhan mutlak bagi seorang pendidik profesional.</p>
-                <p><strong style="color: #FF9500;">Change (Perubahan):</strong> Perubahan nyata dalam diri saya adalah saya mulai merutinkan aktivitas fisik ringan secara berkala. Ke depannya, saya berkomitmen untuk melakukan peregangan otot secara singkat setiap kali duduk terlalu lama di depan komputer, serta konsisten melakukan latihan kardio ringan seperti jalan cepat atau menggunakan side stepper guna menjaga kebugaran tubuh agar tetap prima saat beraktivitas mengajar.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-purple mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Logbook Program Kardio Mandiri dan catatan hasil tes kebugaran jasmani pribadi.</p>
-                <p><strong>Alasan:</strong> Artefak ini membuktikan kesadaran nyata saya dalam merawat kesehatan fisik sebagai persiapan profesi guru. Dokumen tersebut menunjukkan kedisiplinan saya dalam menjalankan program latihan fisik harian dan memantau pemulihan kebugaran tubuh secara berkala.</p>
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Kebugaran fisik yang prima adalah fondasi utama bagi seorang guru agar memiliki energi, ketahanan tubuh, dan kesabaran yang cukup dalam mengajar.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya rutin melakukan peregangan fisik di sela-sela bekerja dan konsisten menjalankan jadwal olahraga ringan agar tubuh tetap bugar, tidak mudah lelah, dan siap menghadapi aktivitas pembelajaran.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1c83Yevhkax_9xOum6PkoJyBmGftKDAfn/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MATKUL 6 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-red-100 text-cyber-red rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0" style="color: #FF3B30;">06</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Literasi Kesehatan Mental</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali peserta PPG dengan pemahaman utama mengenai pentingnya literasi kesehatan mental di lingkungan sekolah. Melalui mata kuliah ini, peserta belajar meluruskan miskonsepsi dan melawan stigma negatif, memahami perbedaan antara distres yang wajar dengan gangguan mental klinis, menguasai keterampilan dasar pertolongan pertama psikologis, serta mengetahui cara menciptakan iklim kelas yang membangun resiliensi, rasa berharga, dan kebahagiaan siswa agar mereka siap belajar.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong style="color: #FF3B30;">Connection (Koneksi):</strong> Materi ini terhubung langsung dengan kesadaran saya mengenai pentingnya kondisi batin dan emosional bagi peserta didik maupun diri saya sendiri sebagai guru. Sebelumnya, saya sempat berpikir bahwa urusan kesehatan mental di sekolah adalah hal yang tabu atau di luar batas tanggung jawab seorang pengajar. Namun, setelah mempelajari pemahaman dasar kesehatan mental, saya menyadari bahwa banyak siswa yang mengalami kesulitan belajar bukan karena mereka malas, melainkan karena mereka sedang menghadapi tekanan emosional atau masalah pribadi yang tidak terselesaikan.</p>
-                <p><strong style="color: #FF3B30;">Challenge (Tantangan):</strong> Tantangan terbesar yang saya hadapi adalah bagaimana membuang jauh-jauh pandangan keliru atau stigma negatif yang kadung melekat di masyarakat mengenai masalah kejiwaan, serta belajar mengenali tanda-tanda awal tekanan mental pada siswa. Tantangan ini sangat terasa ketika saya harus membedakan antara rasa sedih atau stres yang masih wajar dialami anak dengan gangguan mental klinis yang membutuhkan rujukan profesional. Selain itu, menahan diri agar tidak langsung menghakimi siswa yang tampak uring-uringan atau pasif di kelas adalah hal yang membutuhkan kepekaan dan kesabaran ekstra.</p>
-                <p><strong style="color: #FF3B30;">Concept (Konsep):</strong> Konsep utama yang dipelajari meliputi pelurusan stigma, pembedaan antara distres dan gangguan klinis, serta dasar-dasar pertolongan pertama psikologis (Psychological First Aid). Konsep pelurusan stigma menyadarkan saya bahwa stigma negatif adalah penghalang utama bagi siswa untuk mencari pertolongan. Konsep pembedaan kondisi membantu saya memahami batas kemampuan saya sebagai guru dalam mendampingi siswa, sementara keterampilan pertolongan pertama psikologis membekali saya dengan cara-cara aman untuk mendengarkan dan mendukung siswa yang sedang mengalami krisis emosional.</p>
-                <p><strong style="color: #FF3B30;">Change (Perubahan):</strong> Perubahan nyata dalam diri saya adalah saya menjadi lebih peka dan berhati-hati dalam merespons perubahan perilaku siswa di kelas. Ke depannya, saya berkomitmen untuk menciptakan suasana kelas yang aman secara psikologis, di mana siswa merasa dihargai dan tidak takut untuk berekspresi. Jika saya melihat siswa menunjukkan tanda-tanda tekanan emosional yang berat, saya tidak akan memberikan label buruk atau memarahinya, melainkan berusaha menjadi pendengar yang baik serta mengarahkannya secara tepat.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-purple mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Rencana Aksi Perawatan Diri (Self-Care Action Plan) dan Lembar Refleksi Penanganan Kasus Stres atau Tekanan Emosional Siswa.</p>
-                <p><strong>Alasan:</strong> Artefak ini membuktikan pemahaman saya secara nyata dalam mengaplikasikan literasi kesehatan mental, baik untuk menjaga kestabilan batin diri sendiri maupun dalam merancang dukungan emosional bagi siswa. Dokumen tersebut menunjukkan kesiapan saya untuk bertindak sebagai pendidik yang peduli terhadap kesejahteraan psikologis di lingkungan sekolah.</p>
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Kesehatan mental adalah fondasi penting yang menentukan kesiapan siswa untuk belajar, sehingga guru harus mampu melawan stigma, mengenali batasan masalah emosional, dan memberikan dukungan psikologis dasar di kelas.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih peka terhadap kondisi emosional siswa, menghindari pemberian label buruk, serta menciptakan iklim kelas yang hangat dan mendukung kesehatan mental peserta didik.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1THO2Md3tnQjytM1G44vtA35PhWpNypjg/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MATKUL 7 -->
-    <div class="bento-card p-6 md:p-10 opacity-0 animate-fade-in-up" style="animation-delay: 300ms;">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 space-y-5">
-          <div class="flex items-center gap-4 border-b border-slate-200 pb-4">
-            <div class="w-12 h-12 bg-indigo-100 text-cyber-indigo rounded-xl flex items-center justify-center text-xl font-bold font-mono shrink-0">07</div>
-            <h2 class="text-xl font-bold text-[#2D2B52] leading-tight">Praktik Pengalaman Lapangan (PPL)</h2>
-          </div>
-          <p class="text-sm text-slate-600 font-medium leading-relaxed text-justify">
-            <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini merupakan puncak dari program pendidikan profesi guru, di mana peserta PPG terjun langsung ke sekolah mitra untuk melaksanakan praktik mengajar secara nyata. Melalui PPL, peserta mengintegrasikan seluruh teori pedagogik, pemahaman peserta didik, dan desain pembelajaran ke dalam situasi kelas yang sesungguhnya, serta melakukan refleksi berkelanjutan bersama guru pamong dan dosen pembimbing untuk meningkatkan kualitas profesionalisme mengajar.
-          </p>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden mt-4 shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-star text-yellow-500 mr-2"></i> Refleksi 4C</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <p><strong class="text-cyber-indigo">Connection (Koneksi):</strong> Materi dan kegiatan pada mata kuliah ini terhubung langsung dengan seluruh ilmu yang telah saya pelajari di perkuliahan, untuk diuji dan diterapkan secara nyata di ruang kelas sekolah. Sebelumnya, saya mengira merencanakan pembelajaran di atas kertas adalah bagian paling penting. Namun, setelah menjalani PPL, saya menyadari bahwa teori dan modul ajar yang bagus tidak akan berarti apa-apa jika guru tidak mampu mengelolanya secara langsung di hadapan para peserta didik dengan segala dinamika karakternya.</p>
-                <p><strong class="text-cyber-indigo">Challenge (Tantangan):</strong> Tantangan terbesar yang saya hadapi selama PPL adalah bagaimana menyesuaikan teori perencanaan pembelajaran dengan kondisi nyata di lapangan yang sering kali jauh dari perkiraan. Mulai dari menghadapi kelas yang pasif, mengatasi kendala manajemen waktu saat diskusi kelompok, hingga beradaptasi dengan karakter siswa yang sangat beragam dalam satu waktu. Menjaga kestabilan emosi dan ketenangan diri di tengah tekanan kelas yang hidup adalah ujian mental dan profesional yang sangat menantang bagi saya.</p>
-                <p><strong class="text-cyber-indigo">Concept (Konsep):</strong> Konsep utama yang dipelajari selama PPL adalah siklus inkuiri kolaboratif, siklus refleksi berkelanjutan, serta penerapan pembelajaran berbasis praktik nyata (hands-on practice). Saya belajar bahwa pengalaman mengajar di kelas harus selalu dianalisis kembali bersama rekan sejawat dan guru pamong untuk menemukan letak kekurangan. Konsep ini mengajarkan saya bahwa seorang guru profesional tidak boleh merasa puas dengan satu cara mengajar, melainkan harus terus mengevaluasi diri agar pembelajaran berikutnya menjadi lebih baik.</p>
-                <p><strong class="text-cyber-indigo">Change (Perubahan):</strong> Perubahan nyata dalam diri saya adalah saya menjadi seorang pendidik yang jauh lebih reflektif dan tidak mudah panik ketika menghadapi situasi tak terduga di kelas. Ke depannya, saya berkomitmen untuk selalu melakukan evaluasi diri seusai mengajar, mendengarkan setiap masukan dari guru pamong maupun rekan sejawat, dan terus memperbaiki perangkat pembelajaran agar benar-benar berpusat pada kebutuhan siswa.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl overflow-hidden shadow-sm accordion-wrapper">
-            <button class="w-full p-4 flex justify-between items-center text-left hover:bg-slate-50 transition-colors" onclick="toggleAcc(this)">
-              <span class="font-bold text-[#2D2B52] text-sm"><i class="fas fa-layer-group text-cyber-purple mr-2"></i> Analisis Artefak & Kaitan Praktis</span>
-              <i class="fas fa-chevron-down text-slate-400 transition-transform"></i>
-            </button>
-            <div class="accordion-content px-4 bg-slate-50/50">
-              <div class="pb-4 space-y-4 text-sm text-slate-600 font-medium text-justify">
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1">Analisis Artefak</h4>
-                <p><strong>Artefak Pembelajaran:</strong> Perangkat Rencana Pelaksanaan Pembelajaran atau Modul Ajar lengkap, lembar instrumen asesmen, serta video praktik mengajar beserta lembar observasi dari guru pamong.</p>
-                <p><strong>Alasan:</strong> Artefak ini menunjukkan seluruh bukti nyata kompetensi pedagogik dan profesional saya selama mengajar di sekolah mitra. Dokumen tersebut memperlihatkan bagaimana saya merancang tujuan pembelajaran, mengeksekusinya di dalam kelas, dan menerima catatan evaluasi langsung yang menjadi dasar bagi saya untuk terus memperbaiki kualitas diri sebagai guru.</p>
-                <h4 class="font-bold text-cyber-purple border-b border-slate-200 pb-1 mt-4">Kaitan Praktis</h4>
-                <p><strong>Konsep Utama yang Dipelajari:</strong> Praktik Pengalaman Lapangan adalah wadah integrasi seluruh kompetensi guru melalui siklus tindakan nyata dan refleksi berkelanjutan untuk menguji efektivitas pembelajaran di kelas.</p>
-                <p><strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih terbuka menerima masukan dari rekan sejawat dan guru pamong, serta konsisten melakukan evaluasi diri demi meningkatkan mutu pengajaran di masa depan.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:col-span-5 flex flex-col justify-center">
-          <p class="text-[10px] font-bold uppercase text-slate-400 mb-2 text-center">Preview Dokumen</p>
-          <div class="iframe-wrapper"><iframe src="https://drive.google.com/file/d/1rrcxEUiOIIoU6cfULzQnHPZww4kzq7dW/preview"></iframe></div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="py-8 border-t border-white/60 relative z-10 bg-white/40 backdrop-blur-md mt-auto">
-    <div class="max-w-[1300px] mx-auto px-6 text-center text-xs font-semibold text-slate-400 uppercase tracking-widest">
-      <p>© 2026 FATASYA AULIA SUYONO. E-PORTOFOLIO PPG.</p>
-    </div>
-  </footer>
-
-  <script>
-    const btn = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-      const icon = btn.querySelector("i");
-      if (menu.classList.contains("hidden")) { icon.classList.replace("fa-times", "fa-bars"); } 
-      else { icon.classList.replace("fa-bars", "fa-times"); }
-    });
-
-    function toggleAcc(btn) {
-      const content = btn.nextElementSibling;
-      const icon = btn.querySelector('.fa-chevron-down, .fa-chevron-up');
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.classList.remove('fa-chevron-down');
-        icon.classList.add('fa-chevron-up');
+    <style>
+      body {
+        background-color: #fffdf9;
+        color: #4a3b32;
+        overflow-x: hidden;
+        background-image:
+          radial-gradient(
+            at 0% 0%,
+            rgba(255, 181, 198, 0.15) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            rgba(226, 217, 243, 0.2) 0px,
+            transparent 50%
+          );
+        background-attachment: fixed;
       }
-    }
-  </script>
-</body>
+
+      ::selection {
+        background-color: #ffb5c6;
+        color: white;
+      }
+
+      .bg-pattern {
+        background-image: radial-gradient(#ffb5c6 0.6px, transparent 0.6px);
+        background-size: 35px 35px;
+        opacity: 0.35;
+      }
+
+      .animate-float-slow {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-float-medium {
+        animation: float 4s ease-in-out infinite alternate;
+      }
+      .animate-float-fast {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(3deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+      }
+
+      .nav-glass {
+        background: rgba(255, 253, 249, 0.9);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-cute {
+        background: linear-gradient(135deg, #ffb5c6 0%, #fca3b7 100%);
+        color: white;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 8px 20px rgba(255, 181, 198, 0.3);
+        border: 2px solid white;
+      }
+      .btn-cute:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 25px rgba(255, 181, 198, 0.4);
+      }
+
+      /* Iframe styling */
+      .iframe-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 75%;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        background: #ffffff;
+        border: 6px solid white;
+        box-shadow: 0 10px 20px rgba(255, 181, 198, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .iframe-wrapper:hover {
+        transform: translateY(-5px);
+      }
+      .iframe-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Accordion transition */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* FOOLPROOF SCROLL REVEAL CSS */
+      .reveal-css {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-css.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+    </style>
+  </head>
+  <body class="antialiased relative min-h-screen flex flex-col font-sans">
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- ================= NAVIGASI ================= -->
+    <nav
+      class="fixed w-full z-50 top-4 px-4 md:px-6 transition-all duration-300"
+      id="navbar"
+    >
+      <div
+        class="max-w-[1300px] mx-auto nav-glass rounded-full px-4 md:px-6 py-3 flex justify-between items-center shadow-sm"
+      >
+        <!-- Brand -->
+        <div class="flex items-center gap-3 group cursor-pointer shrink-0">
+          <div
+            class="w-10 h-10 bg-pastel-pink text-text-heading rounded-full flex items-center justify-center font-serif font-bold text-xl transition-transform group-hover:rotate-12 border border-white shadow-sm"
+          >
+            F<span class="text-pastel-blush">.</span>
+          </div>
+          <div class="hidden sm:block">
+            <h1
+              class="font-bold text-text-heading text-base leading-none tracking-tight font-serif"
+            >
+              Fatasya.
+            </h1>
+            <p
+              class="text-[9px] text-text-muted font-bold uppercase tracking-widest mt-1"
+            >
+              E-Portofolio
+            </p>
+          </div>
+        </div>
+
+        <!-- MENU DESKTOP (Menu Refleksi Aktif) -->
+        <div
+          class="hidden md:flex items-center gap-1 bg-[#FFE5EC]/60 p-1.5 rounded-full border border-white shadow-sm"
+        >
+          <a
+            href="index.html"
+            class="text-text-muted hover:bg-white/60 hover:text-text-main px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all"
+          >
+            <i class="fas fa-home opacity-70"></i> Beranda
+          </a>
+          <a
+            href="profil.html"
+            class="text-text-muted hover:bg-white/60 hover:text-text-main px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all"
+          >
+            <i class="far fa-user opacity-70"></i> Profil
+          </a>
+          <a
+            href="refleksi.html"
+            class="bg-white text-text-heading px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-sm transition-all"
+          >
+            <i class="far fa-file-alt text-pastel-blush"></i> Refleksi
+          </a>
+          <a
+            href="model.html"
+            class="text-text-muted hover:bg-white/60 hover:text-text-main px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all"
+          >
+            <i class="fas fa-chalkboard-teacher opacity-70"></i> Model Guru
+          </a>
+        </div>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="https://wa.me/6285732003774"
+            target="_blank"
+            class="hidden md:flex btn-cute px-6 py-2.5 rounded-full text-sm font-bold items-center gap-2"
+          >
+            Hubungi Saya <i class="fab fa-whatsapp text-lg"></i>
+          </a>
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-text-heading text-2xl focus:outline-none p-2 rounded-full bg-pastel-pink/80 shadow-sm border border-white"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div
+        id="mobile-menu"
+        class="hidden absolute top-20 left-4 right-4 nav-glass rounded-3xl flex flex-col p-4 space-y-2 font-medium z-40 text-sm shadow-xl border border-white"
+      >
+        <a
+          href="index.html"
+          class="block w-full text-text-muted hover:bg-pastel-pink/40 p-3 rounded-2xl mobile-link"
+          ><i class="fas fa-home opacity-70 mr-2"></i> Beranda</a
+        >
+        <a
+          href="profil.html"
+          class="block w-full text-text-muted hover:bg-pastel-pink/40 p-3 rounded-2xl mobile-link"
+          ><i class="far fa-user opacity-70 mr-2"></i> Profil</a
+        >
+        <a
+          href="refleksi.html"
+          class="block w-full text-text-heading bg-pastel-pink p-3 rounded-2xl font-bold mobile-link"
+          ><i class="far fa-file-alt opacity-70 mr-2"></i> Refleksi</a
+        >
+        <a
+          href="model.html"
+          class="block w-full text-text-muted hover:bg-pastel-pink/40 p-3 rounded-2xl mobile-link"
+          ><i class="fas fa-chalkboard-teacher opacity-70 mr-2"></i> Model
+          Guru</a
+        >
+      </div>
+    </nav>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main
+      class="flex-1 max-w-[1300px] mx-auto w-full relative z-10 pt-36 pb-20 px-6 space-y-12"
+    >
+      <!-- HEADER HALAMAN REFLEKSI -->
+      <div class="text-center mb-16 relative z-10 reveal-css">
+        <div
+          class="inline-flex items-center gap-2 mb-4 bg-white/80 px-4 py-2 rounded-full border border-pastel-lavender shadow-sm"
+        >
+          <i class="fas fa-book-open text-pastel-blush"></i>
+          <span
+            class="text-text-muted font-bold text-[10px] uppercase tracking-widest"
+            >Refleksi SPPG</span
+          >
+        </div>
+        <div class="inline-block relative">
+          <h1
+            class="text-4xl md:text-5xl font-serif font-bold text-text-heading mb-3"
+          >
+            Refleksi Pembelajaran
+            <span class="animate-float-fast inline-block">📝</span>
+          </h1>
+          <svg
+            class="absolute w-full h-3 -bottom-2 left-0 text-pastel-peach"
+            viewBox="0 0 200 20"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,10 Q100,20 200,5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="6"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <p class="text-text-muted font-medium mt-6 max-w-2xl mx-auto">
+          Evaluasi komprehensif atas 7 mata kuliah inti dan penerapannya dalam
+          Praktik Pengalaman Lapangan (PPL) secara nyata.
+        </p>
+      </div>
+
+      <!-- ================= MATKUL 1 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-pink/50 pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-pink text-pastel-blush rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                01
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Pemahaman tentang Peserta Didik dan Pembelajarannya (PPP)
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali
+              peserta PPG untuk memahami karakteristik, kebutuhan, dan potensi
+              peserta didik sebagai dasar merancang, melaksanakan, dan
+              mengevaluasi pembelajaran yang efektif, adaptif, inklusif, dan
+              berpusat pada peserta didik melalui pendekatan Pembelajaran
+              Mendalam. Peserta mempelajari perkembangan dan perbedaan individu,
+              melakukan identifikasi kebutuhan belajar, serta menerapkannya
+              dalam perencanaan dan praktik pembelajaran mikro yang terintegrasi
+              dengan PPL.
+            </p>
+
+            <!-- Accordion Refleksi 4C -->
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-pink/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-pastel-blush transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-pink/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-pink/20 pt-4"
+                >
+                  <p>
+                    <strong class="text-pastel-blush"
+                      >Connection (Koneksi):</strong
+                    >
+                    Materi ini terhubung langsung dengan peran saya sebagai
+                    calon guru dalam memahami karakteristik, kebutuhan, dan
+                    potensi peserta didik secara holistik sebelum merancang
+                    pembelajaran. Selama ini, saya terbiasa menggunakan satu
+                    metode pengajaran yang sama untuk semua anak di kelas. Mata
+                    kuliah ini memberikan pemahaman baru bahwa setiap murid
+                    memiliki tingkat kecerdasan dan kesiapan emosional yang
+                    beragam, sehingga metode mengajar harus selalu disesuaikan
+                    dengan kondisi mereka masing-masing agar materi dapat
+                    dipahami secara maksimal.
+                  </p>
+                  <p>
+                    <strong class="text-pastel-blush"
+                      >Challenge (Tantangan):</strong
+                    >
+                    Tantangan terbesar adalah menggali kebutuhan belajar peserta
+                    didik secara mendalam melalui observasi dan asesmen, karena
+                    keberagaman gaya belajar, kondisi sosial-emosional, dan
+                    latar belakang budaya siswa yang berbeda-beda. Tantangan ini
+                    sangat saya rasakan saat harus merancang strategi pengajaran
+                    untuk kelas yang heterogen, seperti kelas yang berisi murid
+                    dengan tingkat pemahaman yang sangat cepat, murid yang
+                    hiperaktif, serta murid yang mudah kehilangan fokus.
+                    Memfasilitasi seluruh perbedaan tersebut secara adil
+                    menuntut persiapan mengajar yang jauh lebih matang.
+                  </p>
+                  <p>
+                    <strong class="text-pastel-blush">Concept (Konsep):</strong>
+                    Konsep utama yang dipelajari adalah profiling peserta didik,
+                    prinsip pembelajaran konstruktif, humanistik, dan
+                    berdiferensiasi, serta perancangan pengalaman belajar yang
+                    adaptif dan inklusif. Melalui pengenalan profil murid, guru
+                    dapat memetakan minat dan kesulitan belajar sejak awal.
+                    Penerapan konsep-konsep tersebut pada akhirnya bermuara pada
+                    pelaksanaan pembelajaran berdiferensiasi, di mana saya harus
+                    mampu menyesuaikan tingkat kesulitan materi maupun proses
+                    kegiatan kelas dengan kemampuan setiap murid.
+                  </p>
+                  <p>
+                    <strong class="text-pastel-blush"
+                      >Change (Perubahan):</strong
+                    >
+                    Saya lebih konsisten melakukan observasi dan refleksi
+                    terhadap kebutuhan belajar siswa sebelum merancang
+                    pembelajaran, serta menerapkan strategi diferensiasi secara
+                    nyata di kelas. Saya berkomitmen untuk rutin memberikan tes
+                    diagnostik awal di setiap pergantian materi pembelajaran.
+                    Data dari tes tersebut akan saya gunakan untuk menyusun
+                    aktivitas kelas yang lebih beragam, seperti memberikan tugas
+                    pemecahan masalah bagi murid yang cepat paham dan tugas
+                    berbasis praktik bagi murid yang aktif bergerak.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Artefak -->
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-blue/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-layer-group text-blue-400 mr-2 text-lg"></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-blue-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-blue/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-blue/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Hasil studi kasus
+                    atau refleksi mengenai karakteristik dan kebutuhan belajar
+                    peserta didik. Secara spesifik, saya menggunakan analisis
+                    Diagram Tulang Ikan (Fishbone Diagram) dan Laporan Ujian
+                    Akhir Semester.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini menunjukkan pemahaman
+                    saya dalam mengidentifikasi karakteristik, kebutuhan, serta
+                    perbedaan individu peserta didik sebagai dasar dalam
+                    menentukan strategi pembelajaran. Kedua artefak tersebut
+                    membuktikan kemampuan saya secara nyata dalam memetakan akar
+                    masalah siswa di kelas dan merancang penyesuaian instruksi
+                    yang tepat sasaran, baik untuk murid yang sangat aktif
+                    maupun murid yang memiliki kecerdasan di atas rata-rata.
+                  </p>
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Setiap
+                    peserta didik memiliki karakteristik, potensi, dan kebutuhan
+                    belajar yang berbeda sehingga pembelajaran perlu dirancang
+                    secara adaptif, inklusif, dan berpusat pada peserta didik.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih
+                    memperhatikan kebutuhan dan karakteristik peserta didik
+                    melalui observasi dan asesmen sebelum menentukan strategi
+                    dan kegiatan pembelajaran.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Area Dokumen Iframe -->
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1m4iUHuSZUu8Dlp9wgVf6OWriuvtuQogx/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/10R6U2A4gnD1oPFucQwGwFN_FlfDYMvTV?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MATKUL 2 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-peach/50 pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-peach text-orange-400 rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                02
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Filosofi Pendidikan dan Pendidikan Nilai
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali
+              peserta PPG dengan pemahaman mendalam mengenai landasan pendidikan
+              di Indonesia yang berakar pada pemikiran Ki Hadjar Dewantara dan
+              nilai-nilai Pancasila. Peserta mempelajari bagaimana merancang
+              pendidikan yang berpusat pada peserta didik, mengintegrasikan
+              nilai-nilai karakter bangsa, serta memahami pentingnya kode etik
+              profesi guru dalam menciptakan lingkungan belajar yang aman,
+              inklusif, dan bebas dari kekerasan.
+            </p>
+
+            <!-- Accordion Refleksi 4C -->
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-peach/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-orange-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-peach/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-peach/20 pt-4"
+                >
+                  <p>
+                    <strong class="text-orange-500"
+                      >Connection (Koneksi):</strong
+                    >
+                    Materi ini terhubung langsung dengan peran saya sebagai
+                    calon guru dalam memahami dasar dan tujuan pendidikan yang
+                    sebenarnya. Sebelumnya, saya beranggapan bahwa pendidikan
+                    yang ideal adalah penerapan aturan dan kurikulum yang
+                    seragam untuk semua murid di dalam kelas formal. Namun,
+                    setelah mempelajari pemikiran Ki Hadjar Dewantara, saya
+                    menyadari bahwa pendidikan harus disesuaikan dengan
+                    lingkungan asal dan perkembangan zaman murid. Proses
+                    mengajar tidak bisa dilepaskan dari penanaman nilai karakter
+                    dan keharusan guru untuk memposisikan diri sebagai teladan
+                    yang baik.
+                  </p>
+                  <p>
+                    <strong class="text-orange-500"
+                      >Challenge (Tantangan):</strong
+                    >
+                    Tantangan terbesar adalah mengubah pola pikir kaku saya
+                    mengenai cara pendisiplinan siswa di sekolah. Tantangan ini
+                    sangat terasa ketika saya harus menganalisis kasus nyata
+                    tentang seorang guru yang memotong paksa rambut siswanya
+                    demi menegakkan aturan sekolah. Mengubah pandangan lama
+                    bahwa ketegasan harus selalu ditunjukkan melalui hukuman
+                    fisik menjadi pendekatan yang lebih mengutamakan komunikasi
+                    merupakan proses yang menuntut kedewasaan emosi dan
+                    kesabaran ekstra dari saya.
+                  </p>
+                  <p>
+                    <strong class="text-orange-500">Concept (Konsep):</strong>
+                    Konsep utama yang dipelajari adalah pendidikan kontekstual,
+                    nilai-nilai Pancasila, dan penerapan kode etik profesi guru.
+                    Pendidikan kontekstual mengajarkan saya untuk selalu
+                    menyesuaikan penyampaian materi dengan budaya dan lingkungan
+                    nyata murid, seperti yang dicontohkan dalam analisis sekolah
+                    di pedalaman. Sementara itu, pemahaman tentang kode etik
+                    profesi menyadarkan saya bahwa aturan tersebut bukan sekadar
+                    dokumen tertulis, melainkan pedoman moral nyata yang menjaga
+                    martabat guru dan melindungi hak siswa dari berbagai
+                    tindakan kekerasan.
+                  </p>
+                  <p>
+                    <strong class="text-orange-500">Change (Perubahan):</strong>
+                    Saya akan mengubah pendekatan saya dalam mendisiplinkan dan
+                    berinteraksi dengan siswa di kelas. Ke depannya, saya
+                    berkomitmen untuk menghentikan segala bentuk hukuman yang
+                    bersifat mempermalukan fisik maupun mental saat murid
+                    melakukan kesalahan. Saya akan menggantinya dengan
+                    pendekatan dialog untuk mencari tahu alasan di balik
+                    perilaku mereka. Saya juga akan selalu meluangkan waktu
+                    untuk mengamati kebiasaan murid agar penyampaian materi saya
+                    lebih relevan dengan kehidupan nyata mereka.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Artefak -->
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-blue/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-layer-group text-blue-400 mr-2 text-lg"></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-blue-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-blue/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-blue/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Hasil analisis kasus
+                    pendidikan kontekstual dan lembar refleksi mengenai etika
+                    profesi guru. Secara spesifik, saya menggunakan dokumen
+                    Tugas Analisis Kasus Sokola Rimba dan Lembar Refleksi Kasus
+                    Pelanggaran Kode Etik Guru.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini menunjukkan pemahaman
+                    saya dalam mengidentifikasi pentingnya pendidikan yang
+                    menyesuaikan dengan latar belakang budaya murid serta
+                    pentingnya batasan moral seorang guru. Kedua artefak
+                    tersebut membuktikan bahwa saya mampu menganalisis kesalahan
+                    pada pendekatan hukuman fisik di sekolah dan merumuskan
+                    pendekatan baru yang lebih memanusiakan murid dalam proses
+                    pembelajaran.
+                  </p>
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Pendidikan
+                    adalah proses menuntun murid sesuai dengan lingkungan asal
+                    dan zamannya, didukung oleh kepatuhan guru terhadap kode
+                    etik untuk menciptakan lingkungan belajar yang aman.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih
+                    mengutamakan pendekatan komunikasi saat mendisiplinkan siswa
+                    dan selalu menyesuaikan metode mengajar dengan latar
+                    belakang lingkungan peserta didik.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1C23eQm8KSvtTJZQWtabdhXGFq0bwnom0/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/1JS5SGO5aE7U5soL1Y9LPzrPiVyrAXf5D?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MATKUL 3 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-mint/80 pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-mint text-green-600 rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                03
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Pembelajaran Mendalam dan Asesmen Dasar
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali
+              peserta PPG dengan kemampuan merancang, melaksanakan, dan
+              mengevaluasi pembelajaran yang berpusat pada peserta didik untuk
+              mencapai pemahaman yang bermakna. Peserta belajar menyusun tujuan
+              pembelajaran, merancang asesmen atau alat penilaian yang tepat,
+              dan menggunakan berbagai strategi pengajaran untuk memastikan
+              siswa tidak sekadar sibuk beraktivitas, melainkan mampu memahami
+              makna pelajaran dan menerapkannya dalam kehidupan nyata.
+            </p>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-mint/20"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-green-500 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-mint/10">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-mint/30 pt-4"
+                >
+                  <p>
+                    <strong class="text-green-600"
+                      >Connection (Koneksi):</strong
+                    >
+                    Materi ini terhubung langsung dengan peran saya sebagai
+                    calon guru dalam menyusun rencana pembelajaran dan alat
+                    penilaian yang bermakna. Sebelumnya, saya beranggapan bahwa
+                    proses belajar yang aktif cukup dilakukan dengan memberi
+                    tugas atau proyek kepada murid untuk dikerjakan. Namun, mata
+                    kuliah ini menyadarkan saya bahwa guru harus menentukan
+                    tujuan akhir dan cara penilaiannya terlebih dahulu sebelum
+                    merancang kegiatan sehari-hari di kelas. Saya juga belajar
+                    bahwa memberikan tugas proyek pembuatan aplikasi kepada
+                    murid tanpa panduan langkah demi langkah sejak awal justru
+                    akan membuat mereka kebingungan, stres, dan gagal mencapai
+                    pemahaman yang sebenarnya.
+                  </p>
+                  <p>
+                    <strong class="text-green-600"
+                      >Challenge (Tantangan):</strong
+                    >
+                    Tantangan terbesar yang saya hadapi adalah mengubah pola
+                    pikir dari mengajar yang berpusat pada materi atau aktivitas
+                    menjadi mengajar yang berpusat pada tujuan dan penilaian
+                    akhir. Bagi saya, menyusun instrumen penilaian dan kriteria
+                    (rubrik) yang rinci sebelum menyusun urutan kegiatan belajar
+                    di kelas adalah hal yang sangat menantang dan membutuhkan
+                    waktu berpikir yang lebih lama. Selain itu, tantangan
+                    lainnya adalah merumuskan bentuk bantuan bertahap atau
+                    panduan pengerjaan yang pas agar murid tidak merasa dilepas
+                    begitu saja saat mereka mengerjakan tugas proyek berbasis
+                    aplikasi komputer.
+                  </p>
+                  <p>
+                    <strong class="text-green-600">Concept (Konsep):</strong>
+                    Konsep utama yang sangat penting bagi saya adalah pola
+                    perancangan mundur, pemberian bantuan bertahap, dan
+                    penilaian proses pembelajaran. Perancangan mundur
+                    mengajarkan saya untuk selalu memulai persiapan mengajar
+                    dengan menentukan apa yang harus dipahami murid, lalu
+                    menyusun alat penilaiannya, dan terakhir baru merancang
+                    aktivitas belajarnya. Konsep bantuan bertahap menyadarkan
+                    saya bahwa murid harus didampingi perlahan dengan instruksi
+                    yang jelas hingga mereka siap bekerja mandiri. Sementara
+                    itu, penilaian proses mengingatkan saya untuk terus memantau
+                    pemahaman murid di tengah pelajaran berjalan agar saya bisa
+                    segera memperbaiki cara mengajar jika ada murid yang
+                    tertinggal.
+                  </p>
+                  <p>
+                    <strong class="text-green-600">Change (Perubahan):</strong>
+                    Perubahan nyata dalam diri saya adalah saya tidak akan lagi
+                    merancang aktivitas kelas hanya karena kegiatan tersebut
+                    terlihat seru atau membuat murid sibuk. Ke depannya, saya
+                    berkomitmen untuk selalu menerapkan pola perancangan mundur
+                    saat membuat Rencana Pelaksanaan Pembelajaran. Sebelum
+                    memikirkan aktivitas di kelas, saya akan memastikan kriteria
+                    penilaian dan rubrik tugas proyek sudah tersusun dengan
+                    sangat jelas. Selain itu, saya tidak akan lagi memberikan
+                    tugas proyek besar tanpa memberikan panduan langkah demi
+                    langkah yang memadai sejak awal pembelajaran.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-blue/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-layer-group text-blue-400 mr-2 text-lg"></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-blue-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-blue/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-blue/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Modul Ajar pembuatan
+                    aplikasi komputer yang disusun dengan pendekatan perancangan
+                    mundur beserta kelengkapan rubrik penilaian proyek siswa.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini menunjukkan pemahaman
+                    saya secara nyata dalam merancang urutan pembelajaran yang
+                    berfokus pada penilaian yang bermakna. Dokumen modul ajar
+                    tersebut membuktikan bahwa saya mampu menyusun instrumen dan
+                    kriteria penilaian sebelum kegiatan belajar dirancang.
+                    Selain itu, di dalam modul tersebut juga terdapat panduan
+                    penugasan yang jelas bagi siswa, yang menjadi bukti bahwa
+                    saya menerapkan konsep pemberian bantuan bertahap agar siswa
+                    tidak kebingungan saat menyelesaikan proyeknya.
+                  </p>
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Pembelajaran
+                    yang bermakna harus dirancang dengan menentukan tujuan dan
+                    alat penilaian terlebih dahulu, serta selalu membutuhkan
+                    panduan bertahap dari guru saat siswa mengerjakan tugas
+                    proyek.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya
+                    berkomitmen untuk merancang kriteria dan alat penilaian
+                    terlebih dahulu sebelum menyusun aktivitas belajar di kelas,
+                    serta memastikan setiap tugas proyek selalu dilengkapi
+                    dengan panduan bertahap bagi siswa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1JngdvJ78LonqNsQtdrFGIwI-66mA0RK6/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/1BRTG7e8CuAZti0pvJvbs77EufP2F0q2m?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MATKUL 4 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-blue/80 pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-blue text-blue-500 rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                04
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Pola Pikir Bertumbuh (Growth Mindset)
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali
+              peserta PPG dengan pemahaman tentang cara kerja otak manusia yang
+              dapat terus berkembang. Peserta mempelajari pentingnya menumbuhkan
+              keyakinan bahwa kemampuan dapat ditingkatkan melalui usaha, serta
+              bagaimana merancang lingkungan belajar yang mengapresiasi proses
+              dan merayakan kesalahan sebagai bagian dari pembelajaran.
+            </p>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-blue/20"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-blue-500 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-blue/10">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-blue/30 pt-4"
+                >
+                  <p>
+                    <strong class="text-blue-500">Connection (Koneksi):</strong>
+                    Materi ini terhubung langsung dengan peran saya dalam
+                    membentuk mental pantang menyerah pada murid. Sebelumnya,
+                    saya terbiasa memuji murid dari hasil akhir atau
+                    kepintarannya saja. Namun, mata kuliah ini menyadarkan saya
+                    bahwa pujian seperti itu justru membuat anak takut mencoba
+                    tantangan baru karena khawatir dianggap tidak pintar jika
+                    gagal. Saya belajar bahwa guru harus lebih menghargai proses
+                    belajarnya.
+                  </p>
+                  <p>
+                    <strong class="text-blue-500"
+                      >Challenge (Tantangan):</strong
+                    >
+                    Tantangan terbesar adalah mengubah respons saya ketika
+                    melihat murid melakukan kesalahan, terutama saat praktik
+                    membuat aplikasi komputer. Saat aplikasi buatan murid
+                    mengalami kegagalan sistem (error), mereka sering langsung
+                    merasa frustrasi. Menahan diri agar tidak langsung mengambil
+                    alih komputer mereka untuk memberikan jawaban instan, dan
+                    sebaliknya membimbing mereka mencari letak kesalahan
+                    sendiri, membutuhkan kesabaran ekstra.
+                  </p>
+                  <p>
+                    <strong class="text-blue-500">Concept (Konsep):</strong>
+                    Konsep utama yang paling penting adalah apresiasi terhadap
+                    proses dan perayaan kesalahan. Saya belajar bahwa kecerdasan
+                    tidak kaku, melainkan bisa dilatih saat otak menghadapi
+                    kesulitan. Oleh karena itu, lingkungan kelas harus berfokus
+                    pada penghargaan terhadap kegigihan murid. Kesalahan saat
+                    mengerjakan tugas tidak boleh dipandang sebagai kelemahan,
+                    melainkan sebagai petunjuk penting untuk menemukan solusi
+                    yang tepat.
+                  </p>
+                  <p>
+                    <strong class="text-blue-500">Change (Perubahan):</strong>
+                    Perubahan nyata yang akan saya lakukan adalah mengganti cara
+                    saya memberikan pujian di kelas. Saya tidak akan lagi memuji
+                    kecerdasan murid, melainkan secara spesifik memuji kegigihan
+                    dan usaha mereka. Saya juga akan membiasakan murid untuk
+                    tidak panik atau malu saat kode aplikasinya mengalami
+                    kegagalan, melainkan menuntun mereka menggunakan pertanyaan
+                    pancingan agar mau menelusuri masalah tersebut secara
+                    mandiri.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-pink/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i
+                    class="fas fa-layer-group text-pastel-blush mr-2 text-lg"
+                  ></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-pastel-blush transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-pink/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-pink/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-pastel-blush border-b border-pastel-pink/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Lembar Kerja Refleksi
+                    Penerapan Pujian dan Dokumen Skenario Pembelajaran Merayakan
+                    Kesalahan.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini membuktikan pemahaman
+                    saya dalam merancang strategi untuk mengubah pola pikir
+                    murid secara nyata. Skenario pembelajaran tersebut
+                    menunjukkan bahwa saya mampu menyusun kegiatan praktik yang
+                    memberikan ruang aman bagi murid untuk mengalami dan
+                    memperbaiki kesalahan secara mandiri, tanpa merasa dihakimi.
+                  </p>
+                  <h4
+                    class="font-bold text-pastel-blush border-b border-pastel-pink/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Kecerdasan
+                    manusia dapat terus berkembang melalui usaha, dan kesalahan
+                    adalah tahapan wajar yang sangat dibutuhkan untuk mencapai
+                    pemahaman yang mendalam.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya
+                    berkomitmen untuk memuji usaha murid daripada kepintarannya,
+                    serta melatih kemandirian mereka agar pantang menyerah saat
+                    menghadapi kendala tugas praktik.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1z7ZSJFofK5mbdeRLax89jZQVRNkUdX9_/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/1O50bXDV3hUME8_X08k4-ZMdTDoGNVF8g?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MATKUL 5 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-lavender pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-lavender text-purple-500 rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                05
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Pengembangan Kebugaran Jasmani
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali
+              peserta PPG dengan pemahaman mengenai pentingnya menjaga kebugaran
+              fisik dan kesehatan tubuh bagi seorang pendidik. Peserta
+              mempelajari cara mengukur daya tahan fisik, merancang program
+              latihan jasmani mandiri, serta menyadari bahwa ketahanan fisik dan
+              kebugaran tubuh merupakan fondasi utama agar guru dapat mengajar
+              secara optimal, berenergi, dan sabar dalam menghadapi peserta
+              didik.
+            </p>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-lavender/30"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-purple-500 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-lavender/20">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-lavender/40 pt-4"
+                >
+                  <p>
+                    <strong class="text-purple-600"
+                      >Connection (Koneksi):</strong
+                    >
+                    Materi ini terhubung langsung dengan kesadaran saya mengenai
+                    pentingnya kondisi fisik bagi seorang guru. Sebelumnya, saya
+                    beranggapan bahwa persiapan menjadi guru cukup berfokus pada
+                    penguasaan materi pelajaran dan pembuatan perangkat mengajar
+                    saja, sementara urusan kesehatan fisik sering saya abaikan.
+                    Namun, mata kuliah ini menyadarkan saya bahwa berdiri lama
+                    di depan kelas dan duduk berjam-jam menyusun tugas
+                    membutuhkan daya tahan fisik yang prima agar tubuh tidak
+                    mudah lelah atau mengalami nyeri otot.
+                  </p>
+                  <p>
+                    <strong class="text-purple-600"
+                      >Challenge (Tantangan):</strong
+                    >
+                    Tantangan terbesar yang saya hadapi adalah mengubah
+                    kebiasaan lama yang sering mengabaikan kesehatan fisik demi
+                    mengejar target tugas akademik. Saat pertama kali diuji,
+                    saya menyadari bahwa daya tahan jantung dan paru-paru saya
+                    berada di tingkat yang masih perlu ditingkatkan, serta tubuh
+                    mudah terasa pegal. Memaksa diri untuk konsisten meluangkan
+                    waktu berolahraga di tengah padatnya jadwal kuliah dan tugas
+                    PPL adalah sebuah tantangan besar yang menuntut komitmen
+                    tinggi dan manajemen waktu yang baik dari saya.
+                  </p>
+                  <p>
+                    <strong class="text-purple-600">Concept (Konsep):</strong>
+                    Konsep utama yang dipelajari adalah kebugaran holistik dan
+                    manajemen energi fisik. Saya menyadari bahwa kesehatan fisik
+                    guru berhubungan erat dengan kestabilan emosi dan kesabaran
+                    di dalam kelas. Jika raga seorang guru kelelahan, maka fokus
+                    dan energi dalam menghadapi dinamika murid juga akan ikut
+                    menurun. Oleh karena itu, perawatan fisik melalui latihan
+                    ringan secara rutin bukanlah sekadar pilihan tambahan,
+                    melainkan sebuah kebutuhan mutlak bagi seorang pendidik
+                    profesional.
+                  </p>
+                  <p>
+                    <strong class="text-purple-600">Change (Perubahan):</strong>
+                    Perubahan nyata dalam diri saya adalah saya mulai merutinkan
+                    aktivitas fisik ringan secara berkala. Ke depannya, saya
+                    berkomitmen untuk melakukan peregangan otot secara singkat
+                    setiap kali duduk terlalu lama di depan komputer, serta
+                    konsisten melakukan latihan kardio ringan seperti jalan
+                    cepat atau menggunakan side stepper guna menjaga kebugaran
+                    tubuh agar tetap prima saat beraktivitas mengajar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-blue/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-layer-group text-blue-400 mr-2 text-lg"></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-blue-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-blue/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-blue/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Logbook Program
+                    Kardio Mandiri dan catatan hasil tes kebugaran jasmani
+                    pribadi.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini membuktikan kesadaran
+                    nyata saya dalam merawat kesehatan fisik sebagai persiapan
+                    profesi guru. Dokumen tersebut menunjukkan kedisiplinan saya
+                    dalam menjalankan program latihan fisik harian dan memantau
+                    pemulihan kebugaran tubuh secara berkala.
+                  </p>
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Kebugaran
+                    fisik yang prima adalah fondasi utama bagi seorang guru agar
+                    memiliki energi, ketahanan tubuh, dan kesabaran yang cukup
+                    dalam mengajar.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya rutin
+                    melakukan peregangan fisik di sela-sela bekerja dan
+                    konsisten menjalankan jadwal olahraga ringan agar tubuh
+                    tetap bugar, tidak mudah lelah, dan siap menghadapi
+                    aktivitas pembelajaran.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1dtcQ_sYFy_U4pWfZx1zNDa4yZd4I9P8Q/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/1sooIaYLfB4QvY43rg64NznGyhtqvbMJ9?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MATKUL 6 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-peach/50 pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-peach text-red-400 rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                06
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Literasi Kesehatan Mental
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini membekali
+              peserta PPG dengan pemahaman utama mengenai pentingnya literasi
+              kesehatan mental di lingkungan sekolah. Melalui mata kuliah ini,
+              peserta belajar meluruskan miskonsepsi dan melawan stigma negatif,
+              memahami perbedaan antara distres yang wajar dengan gangguan
+              mental klinis, menguasai keterampilan dasar pertolongan pertama
+              psikologis, serta mengetahui cara menciptakan iklim kelas yang
+              membangun resiliensi, rasa berharga, dan kebahagiaan siswa agar
+              mereka siap belajar.
+            </p>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-peach/20"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-red-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-peach/10">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-peach/30 pt-4"
+                >
+                  <p>
+                    <strong class="text-red-400">Connection (Koneksi):</strong>
+                    Materi ini terhubung langsung dengan kesadaran saya mengenai
+                    pentingnya kondisi batin dan emosional bagi peserta didik
+                    maupun diri saya sendiri sebagai guru. Sebelumnya, saya
+                    sempat berpikir bahwa urusan kesehatan mental di sekolah
+                    adalah hal yang tabu atau di luar batas tanggung jawab
+                    seorang pengajar. Namun, setelah mempelajari pemahaman dasar
+                    kesehatan mental, saya menyadari bahwa banyak siswa yang
+                    mengalami kesulitan belajar bukan karena mereka malas,
+                    melainkan karena mereka sedang menghadapi tekanan emosional
+                    atau masalah pribadi yang tidak terselesaikan.
+                  </p>
+                  <p>
+                    <strong class="text-red-400">Challenge (Tantangan):</strong>
+                    Tantangan terbesar yang saya hadapi adalah bagaimana
+                    membuang jauh-jauh pandangan keliru atau stigma negatif yang
+                    kadung melekat di masyarakat mengenai masalah kejiwaan,
+                    serta belajar mengenali tanda-tanda awal tekanan mental pada
+                    siswa. Tantangan ini sangat terasa ketika saya harus
+                    membedakan antara rasa sedih atau stres yang masih wajar
+                    dialami anak dengan gangguan mental klinis yang membutuhkan
+                    rujukan profesional. Selain itu, menahan diri agar tidak
+                    langsung menghakimi siswa yang tampak uring-uringan atau
+                    pasif di kelas adalah hal yang membutuhkan kepekaan dan
+                    kesabaran ekstra.
+                  </p>
+                  <p>
+                    <strong class="text-red-400">Concept (Konsep):</strong>
+                    Konsep utama yang dipelajari meliputi pelurusan stigma,
+                    pembedaan antara distres dan gangguan klinis, serta
+                    dasar-dasar pertolongan pertama psikologis (Psychological
+                    First Aid). Konsep pelurusan stigma menyadarkan saya bahwa
+                    stigma negatif adalah penghalang utama bagi siswa untuk
+                    mencari pertolongan. Konsep pembedaan kondisi membantu saya
+                    memahami batas kemampuan saya sebagai guru dalam mendampingi
+                    siswa, sementara keterampilan pertolongan pertama psikologis
+                    membekali saya dengan cara-cara aman untuk mendengarkan dan
+                    mendukung siswa yang sedang mengalami krisis emosional.
+                  </p>
+                  <p>
+                    <strong class="text-red-400">Change (Perubahan):</strong>
+                    Perubahan nyata dalam diri saya adalah saya menjadi lebih
+                    peka dan berhati-hati dalam merespons perubahan perilaku
+                    siswa di kelas. Ke depannya, saya berkomitmen untuk
+                    menciptakan suasana kelas yang aman secara psikologis, di
+                    mana siswa merasa dihargai dan tidak takut untuk
+                    berekspresi. Jika saya melihat siswa menunjukkan tanda-tanda
+                    tekanan emosional yang berat, saya tidak akan memberikan
+                    label buruk atau memarahinya, melainkan berusaha menjadi
+                    pendengar yang baik serta mengarahkannya secara tepat.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-pink/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i
+                    class="fas fa-layer-group text-pastel-blush mr-2 text-lg"
+                  ></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-pastel-blush transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-pink/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-pink/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-pastel-blush border-b border-pastel-pink/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Rencana Aksi
+                    Perawatan Diri (Self-Care Action Plan) dan Lembar Refleksi
+                    Penanganan Kasus Stres atau Tekanan Emosional Siswa.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini membuktikan pemahaman
+                    saya secara nyata dalam mengaplikasikan literasi kesehatan
+                    mental, baik untuk menjaga kestabilan batin diri sendiri
+                    maupun dalam merancang dukungan emosional bagi siswa.
+                    Dokumen tersebut menunjukkan kesiapan saya untuk bertindak
+                    sebagai pendidik yang peduli terhadap kesejahteraan
+                    psikologis di lingkungan sekolah.
+                  </p>
+                  <h4
+                    class="font-bold text-pastel-blush border-b border-pastel-pink/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Kesehatan
+                    mental adalah fondasi penting yang menentukan kesiapan siswa
+                    untuk belajar, sehingga guru harus mampu melawan stigma,
+                    mengenali batasan masalah emosional, dan memberikan dukungan
+                    psikologis dasar di kelas.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih
+                    peka terhadap kondisi emosional siswa, menghindari pemberian
+                    label buruk, serta menciptakan iklim kelas yang hangat dan
+                    mendukung kesehatan mental peserta didik.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1dWZsQp_J6jeLzPDhOr7gMbygaGQUKVF5/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/16skpgO_BMzQFGQMjAKoExNN1dbBftYOg?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MATKUL 7 ================= -->
+      <div
+        class="bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white shadow-soft relative overflow-hidden reveal-css"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="flex items-center gap-4 border-b border-pastel-lavender pb-4"
+            >
+              <div
+                class="w-14 h-14 bg-pastel-lavender text-purple-600 rounded-2xl flex items-center justify-center text-2xl font-bold font-serif shrink-0 border border-white shadow-sm"
+              >
+                07
+              </div>
+              <h2
+                class="text-2xl font-serif font-bold text-text-heading leading-tight"
+              >
+                Praktik Pengalaman Lapangan (PPL)
+              </h2>
+            </div>
+            <p
+              class="text-base text-text-muted font-medium leading-relaxed text-justify"
+            >
+              <strong>Deskripsi Mata Kuliah:</strong> Mata kuliah ini merupakan
+              puncak dari program pendidikan profesi guru, di mana peserta PPG
+              terjun langsung ke sekolah mitra untuk melaksanakan praktik
+              mengajar secara nyata. Melalui PPL, peserta mengintegrasikan
+              seluruh teori pedagogik, pemahaman peserta didik, dan desain
+              pembelajaran ke dalam situasi kelas yang sesungguhnya, serta
+              melakukan refleksi berkelanjutan bersama guru pamong dan dosen
+              pembimbing untuk meningkatkan kualitas profesionalisme mengajar.
+            </p>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-lavender/30"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-star text-yellow-400 mr-2 text-lg"></i>
+                  Refleksi 4C</span
+                >
+                <i
+                  class="fas fa-chevron-down text-purple-600 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-lavender/10">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-lavender/40 pt-4"
+                >
+                  <p>
+                    <strong class="text-purple-600"
+                      >Connection (Koneksi):</strong
+                    >
+                    Materi dan kegiatan pada mata kuliah ini terhubung langsung
+                    dengan seluruh ilmu yang telah saya pelajari di perkuliahan,
+                    untuk diuji dan diterapkan secara nyata di ruang kelas
+                    sekolah. Sebelumnya, saya mengira merencanakan pembelajaran
+                    di atas kertas adalah bagian paling penting. Namun, setelah
+                    menjalani PPL, saya menyadari bahwa teori dan modul ajar
+                    yang bagus tidak akan berarti apa-apa jika guru tidak mampu
+                    mengelolanya secara langsung di hadapan para peserta didik
+                    dengan segala dinamika karakternya.
+                  </p>
+                  <p>
+                    <strong class="text-purple-600"
+                      >Challenge (Tantangan):</strong
+                    >
+                    Tantangan terbesar yang saya hadapi selama PPL adalah
+                    bagaimana menyesuaikan teori perencanaan pembelajaran dengan
+                    kondisi nyata di lapangan yang sering kali jauh dari
+                    perkiraan. Mulai dari menghadapi kelas yang pasif, mengatasi
+                    kendala manajemen waktu saat diskusi kelompok, hingga
+                    beradaptasi dengan karakter siswa yang sangat beragam dalam
+                    satu waktu. Menjaga kestabilan emosi dan ketenangan diri di
+                    tengah tekanan kelas yang hidup adalah ujian mental dan
+                    profesional yang sangat menantang bagi saya.
+                  </p>
+                  <p>
+                    <strong class="text-purple-600">Concept (Konsep):</strong>
+                    Konsep utama yang dipelajari selama PPL adalah siklus
+                    inkuiri kolaboratif, siklus refleksi berkelanjutan, serta
+                    penerapan pembelajaran berbasis praktik nyata (hands-on
+                    practice). Saya belajar bahwa pengalaman mengajar di kelas
+                    harus selalu dianalisis kembali bersama rekan sejawat dan
+                    guru pamong untuk menemukan letak kekurangan. Konsep ini
+                    mengajarkan saya bahwa seorang guru profesional tidak boleh
+                    merasa puas dengan satu cara mengajar, melainkan harus terus
+                    mengevaluasi diri agar pembelajaran berikutnya menjadi lebih
+                    baik.
+                  </p>
+                  <p>
+                    <strong class="text-purple-600">Change (Perubahan):</strong>
+                    Perubahan nyata dalam diri saya adalah saya menjadi seorang
+                    pendidik yang jauh lebih reflektif dan tidak mudah panik
+                    ketika menghadapi situasi tak terduga di kelas. Ke depannya,
+                    saya berkomitmen untuk selalu melakukan evaluasi diri seusai
+                    mengajar, mendengarkan setiap masukan dari guru pamong
+                    maupun rekan sejawat, dan terus memperbaiki perangkat
+                    pembelajaran agar benar-benar berpusat pada kebutuhan siswa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-pastel-lavender/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <button
+                class="w-full p-5 flex justify-between items-center text-left transition-colors hover:bg-pastel-blue/10"
+                onclick="toggleAcc(this)"
+              >
+                <span class="font-bold text-text-heading text-sm"
+                  ><i class="fas fa-layer-group text-blue-400 mr-2 text-lg"></i>
+                  Analisis Artefak & Kaitan Praktis</span
+                >
+                <i
+                  class="fas fa-chevron-down text-blue-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="accordion-content bg-pastel-blue/5">
+                <div
+                  class="px-5 pb-5 space-y-4 text-sm text-text-muted font-medium text-justify border-t border-pastel-blue/20 pt-4"
+                >
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1"
+                  >
+                    Analisis Artefak
+                  </h4>
+                  <p>
+                    <strong>Artefak Pembelajaran:</strong> Perangkat Rencana
+                    Pelaksanaan Pembelajaran atau Modul Ajar lengkap, lembar
+                    instrumen asesmen, serta video praktik mengajar beserta
+                    lembar observasi dari guru pamong.
+                  </p>
+                  <p>
+                    <strong>Alasan:</strong> Artefak ini menunjukkan seluruh
+                    bukti nyata kompetensi pedagogik dan profesional saya selama
+                    mengajar di sekolah mitra. Dokumen tersebut memperlihatkan
+                    bagaimana saya merancang tujuan pembelajaran,
+                    mengeksekusinya di dalam kelas, dan menerima catatan
+                    evaluasi langsung yang menjadi dasar bagi saya untuk terus
+                    memperbaiki kualitas diri sebagai guru.
+                  </p>
+                  <h4
+                    class="font-bold text-blue-500 border-b border-pastel-blue/50 pb-1 mt-4"
+                  >
+                    Kaitan Praktis
+                  </h4>
+                  <p>
+                    <strong>Konsep Utama yang Dipelajari:</strong> Praktik
+                    Pengalaman Lapangan adalah wadah integrasi seluruh
+                    kompetensi guru melalui siklus tindakan nyata dan refleksi
+                    berkelanjutan untuk menguji efektivitas pembelajaran di
+                    kelas.
+                  </p>
+                  <p>
+                    <strong>Perubahan yang Ingin Dilakukan:</strong> Saya lebih
+                    terbuka menerima masukan dari rekan sejawat dan guru pamong,
+                    serta konsisten melakukan evaluasi diri demi meningkatkan
+                    mutu pengajaran di masa depan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+              <p class="text-[10px] font-bold uppercase text-text-muted">
+                Preview Dokumen
+              </p>
+              <span class="w-6 h-px bg-pastel-lavender"></span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1ziQnP_cKS2yO56F_NE-4sDhR-6wPmISY/preview"
+              ></iframe>
+            </div>
+            <div class="mt-5 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/1nyYegia4t-9b9PcLbGWH_aQj8H90yvjq?usp=drive_link"
+                target="_blank"
+                class="btn-cute px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"
+              >
+                <i class="fas fa-folder-open text-lg"></i> Buka Folder Drive
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer
+      class="bg-white/50 backdrop-blur-md border-t border-white py-8 relative z-10 mt-20"
+    >
+      <div class="max-w-[1300px] mx-auto px-6 flex flex-col items-center gap-3">
+        <div class="text-xl animate-float-slow">🎓✨🌸</div>
+        <p
+          class="text-xs font-bold text-text-muted uppercase tracking-widest text-center"
+        >
+          &copy; 2026 FATASYA AULIA SUYONO. E-PORTOFOLIO PPG.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS & ANIMATIONS ================= -->
+    <script>
+      // Mobile Menu Toggle
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        const icon = btn.querySelector("i");
+        if (menu.classList.contains("hidden")) {
+          icon.classList.replace("fa-times", "fa-bars");
+          btn.classList.remove("bg-white");
+        } else {
+          icon.classList.replace("fa-bars", "fa-times");
+          btn.classList.add("bg-white");
+        }
+      });
+
+      // Navbar Style on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("py-2", "shadow-md");
+          navbar.classList.remove("py-4", "shadow-sm");
+        } else {
+          navbar.classList.add("py-4", "shadow-sm");
+          navbar.classList.remove("py-2", "shadow-md");
+        }
+      });
+
+      // Smooth Accordion Logic
+      function toggleAcc(btn) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector(".fa-chevron-down, .fa-chevron-up");
+
+        if (content.style.maxHeight) {
+          // Close
+          content.style.maxHeight = null;
+          icon.classList.remove("fa-chevron-up");
+          icon.classList.add("fa-chevron-down");
+          icon.style.transform = "rotate(0deg)";
+        } else {
+          // Open
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.classList.remove("fa-chevron-down");
+          icon.classList.add("fa-chevron-up");
+          icon.style.transform = "rotate(-180deg)";
+        }
+      }
+
+      // FOOLPROOF SCROLL REVEAL (INTERSECTION OBSERVER)
+      document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll(".reveal-css");
+
+        const revealOptions = {
+          root: null,
+          rootMargin: "0px 0px -50px 0px",
+          threshold: 0.1,
+        };
+
+        const revealObserver = new IntersectionObserver(function (
+          entries,
+          observer,
+        ) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, revealOptions);
+
+        revealElements.forEach((el) => {
+          revealObserver.observe(el);
+        });
+
+        // Backup check on load
+        setTimeout(() => {
+          revealElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              el.classList.add("is-visible");
+            }
+          });
+        }, 100);
+      });
+    </script>
+  </body>
 </html>
