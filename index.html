@@ -1,333 +1,785 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Beranda - Fatasya Aulia Suyono</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Beranda - Fatasya Aulia Suyono | E-Portofolio PPG</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fraunces (Editorial) & Plus Jakarta Sans (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ["Poppins", "sans-serif"], mono: ["Fira Code", "monospace"] },
-          colors: { cyber: { blue: "#5B45F3", cyan: "#32ADE6", purple: "#AF52DE", indigo: "#5856D6", pink: "#F381BD" } },
-          animation: {
-            "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-            "float": "float 6s ease-in-out infinite",
-            "float-fast": "float 4s ease-in-out infinite",
-            "pulse-ring": "pulseRing 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-            "blink": "blink 1s step-end infinite",
-          },
-          keyframes: {
-            fadeInUp: { "0%": { opacity: "0", transform: "translateY(40px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
-            float: { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-15px)" } },
-            pulseRing: { "0%": { transform: "scale(0.8)", opacity: "0.5" }, "100%": { transform: "scale(1.5)", opacity: "0" } },
-            blink: { "0%, 100%": { opacity: "1" }, "50%": { opacity: "0" } },
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Fraunces", "serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            colors: {
+              pastel: {
+                pink: "#FFE5EC",
+                blush: "#FFB5C6",
+                lavender: "#E2D9F3",
+                peach: "#FFE4D6",
+                cream: "#FFFDF9",
+                blue: "#E0F2FE",
+              },
+              text: {
+                main: "#4A3B32",
+                muted: "#7A6B62",
+                heading: "#2D2745",
+              },
+            },
+            boxShadow: {
+              soft: "0 20px 40px -15px rgba(255, 181, 198, 0.15)",
+              float: "0 30px 50px -20px rgba(226, 217, 243, 0.4)",
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <style>
-    body {
-      background-color: #F8F7FF;
-      background-image: radial-gradient(at 0% 0%, rgba(91, 69, 243, 0.08) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(175, 82, 222, 0.08) 0px, transparent 50%);
-      background-attachment: fixed; color: #1d1d1f; overflow-x: hidden; scroll-behavior: smooth;
-    }
-    .tech-grid-bg {
-      background-size: 40px 40px;
-      background-image: linear-gradient(to right, rgba(91, 69, 243, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(91, 69, 243, 0.03) 1px, transparent 1px);
-    }
-    .bento-card {
-      background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(24px) saturate(150%); border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 10px 30px -10px rgba(91, 69, 243, 0.08); border-radius: 2.5rem; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .bento-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(91, 69, 243, 0.15); border-color: rgba(91, 69, 243, 0.2); background: rgba(255, 255, 255, 0.8); }
-    .nav-link { font-weight: 500; color: #64748B; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: 9999px; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; }
-    .nav-link:hover { color: #5B45F3; background-color: #EBE7FE; }
-    .nav-link.active { color: #5B45F3; font-weight: 600; background-color: white; box-shadow: 0 2px 10px rgba(91, 69, 243, 0.05); }
-    .btn-gradient { background: linear-gradient(135deg, #7158E2 0%, #5B45F3 100%); color: white; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(91, 69, 243, 0.25); }
-    .btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(91, 69, 243, 0.35); }
-  </style>
-</head>
-<body class="antialiased relative min-h-screen flex flex-col">
-  
-  <!-- Ambient Background Decor -->
-  <div class="fixed inset-0 tech-grid-bg pointer-events-none z-0"></div>
-  <div class="fixed top-20 left-10 w-32 h-32 bg-cyber-pink/20 rounded-full blur-3xl pointer-events-none z-0"></div>
-  <div class="fixed bottom-20 right-10 w-64 h-64 bg-cyber-blue/10 rounded-full blur-3xl pointer-events-none z-0"></div>
-
-  <!-- ================= NAVIGASI KONSISTEN ================= -->
-  <nav class="fixed w-full z-50 mt-4 px-4 md:px-6 transition-all duration-300">
-    <div class="max-w-[1300px] mx-auto bg-white/70 backdrop-blur-2xl border border-white/90 shadow-[0_8px_30px_rgba(91,69,243,0.05)] rounded-full px-4 md:px-6 py-3 flex justify-between items-center">
-      
-      <div class="flex items-center gap-3 group cursor-pointer relative shrink-0">
-        <div class="w-10 h-10 bg-gradient-to-br from-cyber-blue to-cyber-purple text-white rounded-xl flex items-center justify-center font-mono font-bold text-lg shadow-lg group-hover:scale-105 transition-transform"><i class="fas fa-code"></i></div>
-        <div class="hidden sm:block">
-          <h1 class="font-bold text-[#2D2B52] text-sm leading-none tracking-tight">Fatasya<span class="text-cyber-pink">.</span></h1>
-          <p class="text-[9px] text-gray-500 font-bold uppercase tracking-widest mt-0.5">E-Portofolio</p>
-        </div>
-      </div>
-
-      <div class="hidden lg:flex items-center gap-1 bg-slate-50/50 p-1 rounded-full border border-slate-100">
-        <a href="index.html" class="nav-link active"><i class="fas fa-home opacity-70"></i> Beranda</a>
-        <a href="profil.html" class="nav-link"><i class="far fa-user opacity-70"></i> Profil</a>
-        <a href="refleksi.html" class="nav-link"><i class="far fa-file-alt opacity-70"></i> Refleksi</a>
-        <a href="model.html" class="nav-link"><i class="fas fa-chalkboard-teacher opacity-70"></i> Model Guru</a>
-      </div>
-
-      <div class="flex items-center gap-3 shrink-0">
-        <a href="https://wa.me/6285732003774" target="_blank" class="hidden md:flex btn-gradient px-6 py-2.5 rounded-full text-sm font-bold items-center gap-2">
-          Hubungi Saya <i class="fab fa-whatsapp text-lg"></i>
-        </a>
-        <button id="mobile-menu-button" class="lg:hidden text-cyber-blue text-2xl focus:outline-none bg-white p-2 rounded-full shadow-sm">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-4 right-4 bg-white/95 backdrop-blur-2xl border border-white shadow-2xl rounded-3xl flex flex-col p-4 space-y-2 font-medium z-40 text-sm">
-      <a href="index.html" class="block w-full text-cyber-blue bg-blue-50 p-3 rounded-2xl font-bold">Beranda</a>
-      <a href="profil.html" class="block w-full text-gray-600 hover:bg-blue-50 p-3 rounded-2xl">Profil</a>
-      <a href="refleksi.html" class="block w-full text-gray-600 hover:bg-blue-50 p-3 rounded-2xl">Refleksi</a>
-      <a href="model.html" class="block w-full text-gray-600 hover:bg-blue-50 p-3 rounded-2xl">Model Guru</a>
-    </div>
-  </nav>
-  <!-- ======================================================= -->
-
-  <main class="flex-1 max-w-[1300px] mx-auto w-full pt-32 pb-20 px-4 md:px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-    
-    <!-- 1. HERO BENTO (Spans 7 columns) -->
-    <div class="bento-card col-span-1 md:col-span-12 lg:col-span-7 p-8 md:p-12 flex flex-col justify-center opacity-0 animate-fade-in-up h-full relative overflow-hidden">
-      
-      <!-- Ornamen Dekoratif Card -->
-      <div class="absolute top-8 right-10 text-4xl text-yellow-300 opacity-40 animate-float"><i class="fas fa-star"></i></div>
-      <div class="absolute top-6 left-6 text-2xl text-blue-300 opacity-30 animate-float-fast"><i class="fas fa-cloud"></i></div>
-
-      <div class="flex items-center gap-2 mb-4 w-max bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm z-10 relative">
-        <span class="text-slate-500 font-bold text-sm">Hi, 👋 Saya, </span>
-      </div>
-
-      <h1 class="text-4xl md:text-5xl lg:text-[54px] font-extrabold text-[#2D2B52] leading-[1.15] tracking-tight mb-4 z-10 relative">
-        Fatasya <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue to-cyber-purple">Aulia Suyono</span>
-      </h1>
-
-      <div class="flex items-center gap-3 mb-6 z-10 relative">
-        <div class="w-8 h-8 bg-pink-100 text-cyber-pink rounded-lg flex items-center justify-center text-sm"><i class="fas fa-graduation-cap"></i></div>
-        <h2 class="text-xl md:text-2xl font-semibold text-cyber-pink">Calon Pendidik Profesional</h2>
-      </div>
-
-      <p class="text-slate-500 text-sm md:text-base leading-relaxed max-w-lg mb-8 z-10 relative font-medium">
-        Mahasiswa PPG Prajabatan Bidang Studi Informatika.<br>
-        Portofolio ini adalah rekam jejak digital dedikasi saya dalam merancang, menerapkan, dan merefleksikan pembelajaran berbasis teknologi yang bermakna.
-      </p>
-
-      <div class="flex flex-wrap items-center gap-6 z-10 relative">
-        <a href="refleksi.html" class="btn-gradient px-8 py-3.5 rounded-full font-semibold text-sm flex items-center gap-3 shadow-lg shadow-cyber-blue/30">
-          Jelajahi Portofolio <div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center"><i class="fas fa-arrow-right text-xs"></i></div>
-        </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. PHOTO INTERACTIVE (Spans 5 columns) -->
-    <!-- FRAME FOTO DIPERBAIKI DENGAN POSISI CENTER AGAR TERLIHAT SEMPURNA -->
-    <div
-        class="col-span-1 md:col-span-12 lg:col-span-4 flex justify-center relative w-full h-full min-h-[450px] group mt-8 lg:mt-0 opacity-0 animate-fade-in-up delay-100 z-20"
-      >
-        <!-- Blur Glow -->
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-cyber-blue/30 to-cyber-purple/30 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-500"
-        ></div>
-
-        <!-- Mac Window Mockup (Dibuat melar otomatis mengikuti tinggi) -->
-        <div
-          class="absolute top-6 bottom-16 w-full max-w-[380px] bg-white/70 backdrop-blur-xl rounded-2xl border border-white/80 shadow-2xl flex flex-col overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
-        >
-          <div
-            class="h-8 bg-gray-100/90 border-b border-gray-200 flex items-center px-4 gap-2 shrink-0"
-          >
-            <div class="w-3 h-3 rounded-full bg-red-400"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-            <div class="w-3 h-3 rounded-full bg-green-400"></div>
-          </div>
-          <div
-            class="flex-1 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 relative"
-          >
-            <!-- Tech Grid bg inside window -->
-            <div class="absolute inset-0 tech-grid-bg opacity-30"></div>
-          </div>
-        </div>
-
-        <!-- Floating Icon 1 (IT/Code) -->
-        <div
-          class="absolute top-0 right-4 lg:right-8 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/60 animate-float z-20"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 text-blue-600 rounded-xl flex items-center justify-center text-2xl shadow-inner"
-          >
-            <i class="fas fa-laptop-code"></i>
-          </div>
-        </div>
-
-        <!-- Floating Icon 2 (Teaching) -->
-        <div
-          class="absolute bottom-32 left-0 lg:left-2 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/60 animate-float z-20"
-          style="animation-delay: 2s"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 text-purple-600 rounded-xl flex items-center justify-center text-2xl shadow-inner"
-          >
-            <i class="fas fa-chalkboard-user"></i>
-          </div>
-        </div>
-
-        <!-- Floating Icon 3 (Innovation) -->
-        <div
-          class="absolute top-1/3 right-0 lg:right-2 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/60 animate-float z-0"
-          style="animation-delay: 1s"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-cyan-100 to-cyan-200 text-cyan-600 rounded-xl flex items-center justify-center text-2xl shadow-inner"
-          >
-            <i class="fas fa-rocket"></i>
-          </div>
-        </div>
-
-        <!-- Main Cutout Image (Ukuran mengikuti persentase tinggi container) -->
-        <img
-          src="https://drive.google.com/thumbnail?id=1AzkFhScCDsskvPvbiKABfnRHhlUI-mgj&sz=w1000"
-          alt="Profile"
-          class="absolute bottom-12 h-[85%] max-h-[500px] object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)] z-10 transition-transform duration-500 group-hover:scale-105"
-        />
-
-        <!-- Bottom Badge -->
-        <div
-          class="absolute bottom-0 left-2 right-2 md:left-6 md:right-6 bg-white/60 backdrop-blur-xl border border-white/80 p-4 rounded-3xl z-30 flex items-center gap-4 transform translate-y-2 group-hover:-translate-y-2 transition-transform duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.1)]"
-        >
-          <div class="bg-white p-2 rounded-full shadow-lg shrink-0">
-            <img
-              src="https://drive.google.com/thumbnail?id=1LlkgmrtXAXmN1ZWtdLyWIkNxrZLfMIqk&sz=w200"
-              alt="UNESA"
-              class="w-8 h-8 object-contain"
-            />
-          </div>
-          <div>
-            <p
-              class="text-[10px] text-gray-600 font-bold uppercase tracking-widest font-mono mb-0.5"
-            >
-              Mahasiswa PPG Prajabatan
-            </p>
-            <p class="text-sm font-bold text-gray-900 leading-tight">
-              Universitas Negeri Surabaya
-            </p>
-          </div>
-        </div>
-      </div>
-
-    <!-- ========================================== -->
-
-    <!-- 3. TENTANG PORTOFOLIO BENTO (Spans 7 columns) -->
-    <div class="bento-card col-span-1 md:col-span-12 lg:col-span-7 p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-      <div class="flex-1 relative z-10">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 bg-blue-100 text-cyber-blue rounded-lg flex items-center justify-center"><i class="fas fa-book-open"></i></div>
-          <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 font-sans">Tentang Portofolio</h3>
-        </div>
-        <h2 class="text-2xl md:text-3xl font-bold text-[#2D2B52] mb-5">Membangun Pembelajaran Bermakna</h2>
-
-        <p class="text-slate-500 text-sm leading-relaxed text-justify mb-4 font-medium">
-          Lahir dan besar di <span class="bg-blue-50 text-cyber-blue px-2 py-0.5 rounded border border-blue-100">Kabupaten Lamongan, Jawa Timur</span>, saya memahami bahwa pendidikan adalah jembatan terbaik menuju kemajuan. Sebagai pendidik, saya percaya bahwa kemampuan komunikasi yang artikulatif di depan kelas sama pentingnya dengan penguasaan baris-baris kode pemrograman.
-        </p>
-        <p class="text-slate-500 text-sm leading-relaxed text-justify mb-6 font-medium">
-          E-Portfolio ini tidak sekadar berisi kumpulan tugas, melainkan cerminan pengabdian tulus saya dalam menemukan formula pedagogi terbaik bagi peserta didik. Di sini, Anda akan menemukan analisis artefak, instrumen evaluasi, dan model guru profesional.
-        </p>
-
-        <a href="profil.html" class="inline-flex items-center text-cyber-blue font-bold hover:text-white hover:bg-cyber-blue transition-colors group text-sm bg-blue-50/50 px-5 py-2.5 rounded-full border border-blue-100">
-          Baca Selengkapnya <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-        </a>
-      </div>
-      
-      <!-- Decor Books -->
-      <div class="hidden md:flex flex-col items-center opacity-80 mr-4">
-        <div class="w-16 h-16 bg-green-100 rounded-t-xl mb-1 flex justify-center pt-3 shadow-inner"><i class="fas fa-leaf text-green-500 text-2xl"></i></div>
-        <div class="w-24 h-5 bg-cyber-pink rounded-md mb-1 shadow-md"></div>
-        <div class="w-28 h-6 bg-cyber-blue rounded-md mb-1 shadow-md"></div>
-        <div class="w-26 h-5 bg-cyber-purple rounded-md shadow-md"></div>
-      </div>
-    </div>
-
-    <!-- 4. CONTACT BENTO (Spans 5 columns) -->
-    <div class="bento-card col-span-1 md:col-span-12 lg:col-span-5 p-8 md:p-10 opacity-0 animate-fade-in-up flex flex-col justify-center relative overflow-hidden" style="animation-delay: 300ms;">
-      
-      <!-- Cyber Decoration -->
-      <div class="absolute -right-10 -bottom-10 text-[180px] text-cyber-blue/5 z-0 transform -rotate-12 pointer-events-none"><i class="fas fa-paper-plane"></i></div>
-
-      <div class="relative z-10 mb-8">
-        <div class="flex items-center gap-3 mb-2">
-          <div class="w-8 h-8 bg-purple-100 text-cyber-purple rounded-lg flex items-center justify-center"><i class="fas fa-satellite-dish"></i></div>
-          <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 font-sans">Informasi Kontak</h3>
-        </div>
-        <h2 class="text-2xl font-bold text-[#2D2B52]">Terhubung Bersama Saya</h2>
-      </div>
-
-      <div class="flex flex-col gap-4 relative z-10">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/6285732003774" target="_blank" class="flex items-center justify-between p-4 bg-white/70 hover:bg-white border border-white rounded-2xl shadow-sm hover:shadow-md transition-all group">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-green-100 text-green-500 rounded-full flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fab fa-whatsapp"></i></div>
-            <div><p class="text-[10px] font-bold text-slate-400 uppercase">WhatsApp</p><p class="text-sm font-semibold text-slate-700">0857-3200-3774</p></div>
-          </div>
-          <i class="fas fa-external-link-alt text-slate-300 group-hover:text-cyber-blue transition-colors"></i>
-        </a>
-
-        <!-- Email -->
-        <a href="mailto:peserta.31147@ppg.belajar.id" class="flex items-center justify-between p-4 bg-white/70 hover:bg-white border border-white rounded-2xl shadow-sm hover:shadow-md transition-all group">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-pink-100 text-cyber-pink rounded-full flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fas fa-envelope"></i></div>
-            <div><p class="text-[10px] font-bold text-slate-400 uppercase">Email Akademik</p><p class="text-xs font-semibold text-slate-700 truncate max-w-[150px] sm:max-w-full">peserta.31147@ppg.belajar.id</p></div>
-          </div>
-          <i class="fas fa-external-link-alt text-slate-300 group-hover:text-cyber-blue transition-colors"></i>
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://id.linkedin.com/in/fatasyaauliasuyono" target="_blank" class="flex items-center justify-between p-4 bg-white/70 hover:bg-white border border-white rounded-2xl shadow-sm hover:shadow-md transition-all group">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-[#0077b5]/10 text-[#0077b5] rounded-full flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fab fa-linkedin-in"></i></div>
-            <div><p class="text-[10px] font-bold text-slate-400 uppercase">LinkedIn</p><p class="text-sm font-semibold text-slate-700">Fatasya Aulia Suyono</p></div>
-          </div>
-          <i class="fas fa-external-link-alt text-slate-300 group-hover:text-cyber-blue transition-colors"></i>
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <footer class="py-8 border-t border-white/60 relative z-10 bg-white/50 backdrop-blur-md mt-auto">
-    <div class="max-w-[1300px] mx-auto px-6 text-center text-xs font-semibold text-slate-400 uppercase tracking-widest">
-      <p>© 2026 FATASYA AULIA SUYONO. E-PORTOFOLIO PPG.</p>
-    </div>
-  </footer>
-
-  <script>
-    const btn = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-      const icon = btn.querySelector("i");
-      if (menu.classList.contains("hidden")) {
-        icon.classList.replace("fa-times", "fa-bars");
-      } else {
-        icon.classList.replace("fa-bars", "fa-times");
+    <style>
+      body {
+        background-color: #fffdf9;
+        color: #4a3b32;
+        overflow-x: hidden;
+        background-image:
+          radial-gradient(
+            at 0% 0%,
+            rgba(255, 181, 198, 0.15) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            rgba(226, 217, 243, 0.2) 0px,
+            transparent 50%
+          );
+        background-attachment: fixed;
       }
-    });
-  </script>
-</body>
+
+      ::selection {
+        background-color: #ffb5c6;
+        color: white;
+      }
+
+      .bg-pattern {
+        background-image: radial-gradient(#ffb5c6 0.5px, transparent 0.5px);
+        background-size: 30px 30px;
+        opacity: 0.3;
+      }
+
+      .blob-shape {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        animation: morph 8s ease-in-out infinite;
+      }
+      .blob-shape-2 {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        animation: morph2 10s ease-in-out infinite alternate;
+      }
+
+      @keyframes morph {
+        0%,
+        100% {
+          border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        34% {
+          border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+        }
+        67% {
+          border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        }
+      }
+      @keyframes morph2 {
+        0% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        50% {
+          border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+        100% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+      }
+
+      .animate-float-slow {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-float-medium {
+        animation: float 4s ease-in-out infinite alternate;
+      }
+      .animate-float-fast {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(2deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+      }
+
+      .nav-glass {
+        background: rgba(255, 253, 249, 0.9);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-cute {
+        background: linear-gradient(135deg, #ffb5c6 0%, #fca3b7 100%);
+        color: white;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 8px 20px rgba(255, 181, 198, 0.3);
+        border: 2px solid white;
+      }
+      .btn-cute:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 25px rgba(255, 181, 198, 0.4);
+      }
+
+      .btn-outline {
+        background: white;
+        color: #2d2745;
+        border: 2px solid #e2d9f3;
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        background: #e2d9f3;
+        border-color: #e2d9f3;
+        transform: translateY(-2px);
+      }
+
+      .polaroid-frame {
+        background: white;
+        padding: 12px 12px 40px 12px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(74, 59, 50, 0.08);
+        position: relative;
+        transform: rotate(2deg);
+        transition: transform 0.5s ease;
+        border: 1px solid rgba(255, 181, 198, 0.2);
+      }
+      .polaroid-frame:hover {
+        transform: rotate(0deg) scale(1.02);
+      }
+
+      .washi-tape {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-3deg);
+        width: 120px;
+        height: 35px;
+        background-color: rgba(226, 217, 243, 0.8);
+        backdrop-filter: blur(4px);
+        z-index: 10;
+      }
+
+      .text-highlight {
+        position: relative;
+        z-index: 1;
+        white-space: nowrap;
+      }
+      .text-highlight::before {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: -2px;
+        right: -2px;
+        height: 40%;
+        background-color: #ffe4d6;
+        z-index: -1;
+        border-radius: 4px;
+        transform: rotate(-1deg);
+      }
+
+      .reveal {
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="antialiased relative min-h-screen flex flex-col font-sans">
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- ================= NAVIGASI ================= -->
+    <nav
+      class="fixed w-full z-50 top-4 px-4 md:px-6 transition-all duration-300"
+      id="navbar"
+    >
+      <div
+        class="max-w-[1300px] mx-auto nav-glass rounded-full px-4 md:px-6 py-3 flex justify-between items-center shadow-sm"
+      >
+        <!-- Brand -->
+        <div class="flex items-center gap-3 group cursor-pointer shrink-0">
+          <div
+            class="w-10 h-10 bg-pastel-pink text-text-heading rounded-full flex items-center justify-center font-serif font-bold text-xl transition-transform group-hover:rotate-12 border border-white shadow-sm"
+          >
+            F<span class="text-pastel-blush">.</span>
+          </div>
+          <div class="hidden sm:block">
+            <h1
+              class="font-bold text-text-heading text-base leading-none tracking-tight font-serif"
+            >
+              Fatasya.
+            </h1>
+            <p
+              class="text-[9px] text-text-muted font-bold uppercase tracking-widest mt-1"
+            >
+              E-Portofolio
+            </p>
+          </div>
+        </div>
+
+        <!-- DESKTOP MENU: Diubah ke md:flex agar pasti muncul. Menggunakan styling Tailwind langsung agar pill terlihat jelas -->
+        <div
+          class="hidden md:flex items-center gap-1 bg-[#FFE5EC]/60 p-1.5 rounded-full border border-white shadow-sm"
+        >
+          <!-- Menu Beranda (Aktif) - Kotak putih solid -->
+          <a
+            href="index.html"
+            class="bg-white text-text-heading px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-sm transition-all"
+          >
+            <i class="fas fa-home text-pastel-blush"></i> Beranda
+          </a>
+
+          <!-- Menu Profil -->
+          <a
+            href="profil.html"
+            class="text-text-muted hover:bg-white/60 hover:text-text-main px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all"
+          >
+            <i class="far fa-user opacity-70"></i> Profil
+          </a>
+
+          <!-- Menu Refleksi -->
+          <a
+            href="refleksi.html"
+            class="text-text-muted hover:bg-white/60 hover:text-text-main px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all"
+          >
+            <i class="far fa-file-alt opacity-70"></i> Refleksi
+          </a>
+
+          <!-- Menu Model Guru -->
+          <a
+            href="model.html"
+            class="text-text-muted hover:bg-white/60 hover:text-text-main px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all"
+          >
+            <i class="fas fa-chalkboard-teacher opacity-70"></i> Model Guru
+          </a>
+        </div>
+
+        <!-- Contact Button & Mobile Toggle -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="#kontak"
+            class="hidden md:flex btn-cute px-6 py-2.5 rounded-full text-sm font-bold items-center gap-2"
+          >
+            Hubungi Saya <i class="fab fa-whatsapp text-lg"></i>
+          </a>
+          <!-- Tombol Hamburger untuk versi HP (Layar sangat kecil) -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-text-heading text-2xl focus:outline-none p-2 rounded-full bg-pastel-pink/80 shadow-sm border border-white"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU (Hanya muncul jika di HP dan tombol hamburger ditekan) -->
+      <div
+        id="mobile-menu"
+        class="hidden absolute top-20 left-4 right-4 nav-glass rounded-3xl flex flex-col p-4 space-y-2 font-medium z-40 text-sm shadow-xl border border-white"
+      >
+        <a
+          href="index.html"
+          class="block w-full text-text-heading bg-pastel-pink p-3 rounded-2xl font-bold mobile-link"
+          ><i class="fas fa-home opacity-70 mr-2"></i> Beranda</a
+        >
+        <a
+          href="profil.html"
+          class="block w-full text-text-muted hover:bg-pastel-pink/40 p-3 rounded-2xl mobile-link"
+          ><i class="far fa-user opacity-70 mr-2"></i> Profil</a
+        >
+        <a
+          href="refleksi.html"
+          class="block w-full text-text-muted hover:bg-pastel-pink/40 p-3 rounded-2xl mobile-link"
+          ><i class="far fa-file-alt opacity-70 mr-2"></i> Refleksi</a
+        >
+        <a
+          href="model.html"
+          class="block w-full text-text-muted hover:bg-pastel-pink/40 p-3 rounded-2xl mobile-link"
+          ><i class="fas fa-chalkboard-teacher opacity-70 mr-2"></i> Model
+          Guru</a
+        >
+      </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <main
+      class="flex-1 max-w-[1300px] mx-auto w-full relative z-10 pt-32 lg:pt-40 pb-20 px-6"
+    >
+      <section
+        id="beranda"
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[70vh]"
+      >
+        <div
+          class="lg:col-span-7 flex flex-col justify-center relative z-10 hero-content"
+        >
+          <div
+            class="absolute -top-10 -left-10 text-3xl opacity-80 animate-float-slow"
+          >
+            ☁️
+          </div>
+          <div
+            class="absolute top-20 right-10 text-2xl opacity-70 animate-float-fast text-pastel-blush"
+          >
+            ✨
+          </div>
+
+          <div
+            class="flex items-center gap-3 mb-6 w-max bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-white shadow-sm"
+          >
+            <span class="text-text-muted font-bold text-sm tracking-wide"
+              >Hi, 👋 Saya,</span
+            >
+          </div>
+
+          <h1
+            class="text-5xl md:text-6xl lg:text-[68px] font-serif font-bold text-text-heading leading-[1.1] mb-4"
+          >
+            Fatasya <br />
+            <span class="text-text-main relative"
+              >Aulia Suyono
+              <svg
+                class="absolute w-full h-4 -bottom-1 left-0 text-pastel-blush"
+                viewBox="0 0 200 20"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,10 Q100,20 200,5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+          </h1>
+
+          <div class="flex items-center gap-3 mb-6 mt-4">
+            <div
+              class="w-10 h-10 bg-pastel-lavender rounded-xl flex items-center justify-center text-lg text-text-heading rotate-[-5deg] shadow-sm"
+            >
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h2
+              class="text-xl md:text-2xl font-semibold text-text-heading font-serif"
+            >
+              Calon Pendidik Profesional
+            </h2>
+          </div>
+
+          <p
+            class="text-text-muted text-base md:text-lg leading-relaxed max-w-lg mb-8 font-medium"
+          >
+            Mahasiswa PPG Prajabatan Bidang Studi
+            <span class="font-bold text-text-main">Informatika</span
+            >.<br /><br />
+            Portofolio ini adalah rekam jejak digital dedikasi saya dalam
+            merancang, menerapkan, dan merefleksikan pembelajaran berbasis
+            teknologi yang bermakna.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href="profil.html"
+              class="btn-cute px-8 py-3.5 rounded-full font-bold text-sm flex items-center gap-3"
+            >
+              Jelajahi Portofolio <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-5 relative flex justify-center items-center mt-10 lg:mt-0 hero-image-container"
+        >
+          <div
+            class="absolute inset-0 bg-pastel-pink/40 blob-shape z-0 transform scale-110"
+          ></div>
+          <div
+            class="absolute inset-0 bg-pastel-lavender/30 blob-shape-2 z-0 transform scale-105 translate-x-4"
+          ></div>
+
+          <div
+            class="absolute top-5 -right-4 bg-white p-3 rounded-2xl shadow-float animate-float-medium z-20 border border-white/50 text-2xl rotate-12"
+          >
+            📚
+          </div>
+          <div
+            class="absolute bottom-20 -left-6 bg-white p-3 rounded-2xl shadow-float animate-float-slow z-20 border border-white/50 text-2xl -rotate-12"
+          >
+            💻
+          </div>
+          <div class="absolute -top-6 left-10 text-3xl animate-float-fast z-20">
+            🌸
+          </div>
+          <div
+            class="absolute bottom-10 right-0 text-3xl animate-float-slow z-20"
+          >
+            💗
+          </div>
+
+          <div class="polaroid-frame z-10 w-full max-w-[340px]">
+            <div class="washi-tape"></div>
+            <div class="rounded-xl overflow-hidden aspect-[4/5] bg-pastel-blue">
+              <!-- URL Google Drive Sesuai Referensi Anda -->
+              <img
+                src="https://drive.google.com/thumbnail?id=1AzkFhScCDsskvPvbiKABfnRHhlUI-mgj&sz=w1000"
+                alt="Profile"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="text-center mt-4 font-serif font-bold text-text-heading text-lg"
+            >
+              Fatasya 🌸
+            </div>
+          </div>
+
+          <div
+            class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-max bg-white/95 backdrop-blur-md px-6 py-3 rounded-full shadow-soft border border-white z-30 flex items-center gap-3"
+          >
+            <div
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm p-1"
+            >
+              <!-- URL UNESA Google Drive Sesuai Referensi Anda -->
+              <img
+                src="https://drive.google.com/thumbnail?id=1LlkgmrtXAXmN1ZWtdLyWIkNxrZLfMIqk&sz=w200"
+                alt="UNESA"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div class="text-left">
+              <p
+                class="text-[10px] text-text-muted font-bold uppercase tracking-wider"
+              >
+                Mahasiswa PPG Prajabatan
+              </p>
+              <p class="text-sm font-bold text-text-heading">
+                Universitas Negeri Surabaya
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT SECTION ================= -->
+      <section id="profil" class="mt-32 relative reveal">
+        <svg
+          class="absolute -top-20 left-10 w-32 h-32 text-pastel-lavender opacity-50"
+          fill="none"
+          viewBox="0 0 100 100"
+        >
+          <path
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-dasharray="4 4"
+            d="M10,90 Q40,10 90,50"
+            fill="none"
+          />
+        </svg>
+
+        <div
+          class="bg-white/80 backdrop-blur-lg rounded-[2.5rem] p-8 md:p-14 shadow-soft border border-white relative overflow-hidden"
+        >
+          <div
+            class="absolute -right-10 -bottom-10 text-[150px] opacity-5 pointer-events-none rotate-[-15deg]"
+          >
+            ✏️
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-10 h-10 bg-pastel-peach rounded-full flex items-center justify-center text-text-heading"
+                >
+                  <i class="fas fa-book-open"></i>
+                </div>
+                <h3
+                  class="text-xs font-bold uppercase tracking-widest text-text-muted"
+                >
+                  Tentang Portofolio
+                </h3>
+              </div>
+
+              <h2
+                class="text-3xl md:text-4xl font-serif font-bold text-text-heading mb-6 leading-tight"
+              >
+                Membangun Pembelajaran
+                <span class="text-highlight">Bermakna</span>
+              </h2>
+
+              <div
+                class="space-y-5 text-text-muted font-medium text-base md:text-lg leading-relaxed text-justify relative"
+              >
+                <div
+                  class="absolute -left-6 -top-4 text-6xl font-serif text-pastel-blush opacity-30"
+                >
+                  "
+                </div>
+
+                <p>
+                  Lahir dan besar di Kabupaten Lamongan, Jawa Timur, saya
+                  memahami bahwa pendidikan adalah jembatan terbaik menuju
+                  kemajuan. Sebagai pendidik, saya percaya bahwa kemampuan
+                  komunikasi yang artikulatif di depan kelas sama pentingnya
+                  dengan penguasaan baris-baris kode pemrograman.
+                </p>
+                <p>
+                  E-Portfolio ini tidak sekadar berisi kumpulan tugas, melainkan
+                  cerminan pengabdian tulus saya dalam menemukan formula
+                  pedagogi terbaik bagi peserta didik. Di sini, Anda akan
+                  menemukan analisis artefak, instrumen evaluasi, dan model guru
+                  profesional.
+                </p>
+              </div>
+
+              <div class="mt-8">
+                <a
+                  href="profil.html"
+                  class="inline-flex items-center gap-2 text-text-heading font-bold hover:text-pastel-blush transition-colors group"
+                >
+                  Baca Selengkapnya
+                  <span
+                    class="w-8 h-8 bg-pastel-pink rounded-full flex items-center justify-center group-hover:translate-x-2 transition-transform"
+                  >
+                    <i class="fas fa-arrow-right text-xs"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="hidden md:flex flex-col items-center justify-center w-1/3 relative"
+            >
+              <div
+                class="w-full aspect-square bg-pastel-pink/20 rounded-full absolute blob-shape"
+              ></div>
+              <div class="relative z-10 flex flex-col gap-4 animate-float-slow">
+                <div
+                  class="bg-white p-4 rounded-2xl shadow-sm border border-pastel-pink transform -rotate-6 flex items-center gap-3"
+                >
+                  <span class="text-2xl">📝</span>
+                  <div class="w-24 h-3 bg-pastel-lavender rounded-full"></div>
+                </div>
+                <div
+                  class="bg-white p-4 rounded-2xl shadow-sm border border-pastel-lavender transform rotate-3 flex items-center gap-3 translate-x-8"
+                >
+                  <span class="text-2xl">🧠</span>
+                  <div class="w-20 h-3 bg-pastel-peach rounded-full"></div>
+                </div>
+                <div
+                  class="bg-white p-4 rounded-2xl shadow-sm border border-pastel-peach transform -rotate-2 flex items-center gap-3 -translate-x-4"
+                >
+                  <span class="text-2xl">⭐</span>
+                  <div class="w-28 h-3 bg-pastel-blue rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT SECTION ================= -->
+      <section id="kontak" class="mt-32 mb-20 reveal">
+        <div class="text-center mb-12">
+          <h3
+            class="text-xs font-bold uppercase tracking-widest text-text-muted mb-2"
+          >
+            Informasi Kontak
+          </h3>
+          <h2
+            class="text-3xl md:text-4xl font-serif font-bold text-text-heading"
+          >
+            Terhubung Bersama Saya <span class="text-pastel-blush">💗</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a
+            href="https://wa.me/6285732003774"
+            target="_blank"
+            class="bg-white rounded-[2rem] p-6 shadow-sm hover:shadow-float transition-all duration-300 transform hover:-translate-y-2 border border-white hover:border-pastel-pink group text-center flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-text-heading text-lg mb-1">WhatsApp</h4>
+              <p class="text-text-muted font-medium">0857-3200-3774</p>
+            </div>
+          </a>
+
+          <a
+            href="mailto:peserta.31147@ppg.belajar.id"
+            class="bg-white rounded-[2rem] p-6 shadow-sm hover:shadow-float transition-all duration-300 transform hover:-translate-y-2 border border-white hover:border-pastel-peach group text-center flex flex-col items-center gap-4 mt-0 md:mt-8"
+          >
+            <div
+              class="w-16 h-16 bg-pastel-pink text-pastel-blush rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-text-heading text-lg mb-1">
+                Email Akademik
+              </h4>
+              <p
+                class="text-text-muted font-medium text-sm md:text-base break-all"
+              >
+                peserta.31147@ppg.belajar.id
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://id.linkedin.com/in/fatasyaauliasuyono"
+            target="_blank"
+            class="bg-white rounded-[2rem] p-6 shadow-sm hover:shadow-float transition-all duration-300 transform hover:-translate-y-2 border border-white hover:border-pastel-lavender group text-center flex flex-col items-center gap-4"
+          >
+            <div
+              class="w-16 h-16 bg-pastel-blue text-blue-500 rounded-full flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-text-heading text-lg mb-1">LinkedIn</h4>
+              <p class="text-text-muted font-medium">Fatasya Aulia Suyono</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer
+      class="bg-white/50 backdrop-blur-md border-t border-white py-8 relative z-10 mt-auto"
+    >
+      <div class="max-w-[1300px] mx-auto px-6 flex flex-col items-center gap-3">
+        <div class="text-xl animate-float-slow">🎓✨🌸</div>
+        <p
+          class="text-xs font-bold text-text-muted uppercase tracking-widest text-center"
+        >
+          &copy; 2026 FATASYA AULIA SUYONO. E-PORTOFOLIO PPG.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS & ANIMATIONS ================= -->
+    <script>
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+
+      const toggleMenu = () => {
+        menu.classList.toggle("hidden");
+        const icon = btn.querySelector("i");
+        if (menu.classList.contains("hidden")) {
+          icon.classList.replace("fa-times", "fa-bars");
+          btn.classList.remove("bg-white");
+        } else {
+          icon.classList.replace("fa-bars", "fa-times");
+          btn.classList.add("bg-white");
+        }
+      };
+
+      btn.addEventListener("click", toggleMenu);
+
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("py-2");
+          navbar.classList.remove("py-4");
+        } else {
+          navbar.classList.add("py-4");
+          navbar.classList.remove("py-2");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tl = gsap.timeline();
+        tl.from("nav", {
+          y: -50,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        })
+          .from(
+            ".hero-content > *",
+            {
+              y: 30,
+              opacity: 0,
+              duration: 0.8,
+              stagger: 0.1,
+              ease: "power3.out",
+            },
+            "-=0.4",
+          )
+          .from(
+            ".hero-image-container",
+            { scale: 0.9, opacity: 0, duration: 1, ease: "back.out(1.2)" },
+            "-=0.6",
+          );
+
+        gsap.utils.toArray(".reveal").forEach((elem) => {
+          gsap.fromTo(
+            elem,
+            { y: 50, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              duration: 1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: elem,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+      });
+    </script>
+  </body>
 </html>
